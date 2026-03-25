@@ -1,0 +1,24 @@
+# Continuous integration workflow
+
+name: Ontology verification
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  qa:
+    uses: Airy59/OntoQA/.github/workflows/ci.yml@main    # shared GitHub pipeline. @main tells to use latest commit.
+    with:
+      main_ontology: ontology/src/core.ttl  # several file can be provided, but there must be a root ontology file (core.ttl) importing the others.
+      shapes_glob:   ontology/shapes/**/*.ttl
+      data_glob:     ontology/data/**/*.ttl
+      reasoner:      hermit  # hermit | elk | pellet | jfact | structural.
+
+      # Note: workflow tags can also refer to a specific version (@v1 ...) or commit
+      # Note: we recommend using HermiT (strict DL reasoner, default in Protégé) or Pellet (DL reasoner, more relaxed on e.g. datatypes)
+      # Note: use ELK for fast EL-profile modules.
+      # Note: using reasoners other than those made available by the current ROBOT version requires setting up a specific workflow.

@@ -1,0 +1,16 @@
+# .github/workflows/docs-wiki.yml
+name: Docs (Wiki)
+on:
+  workflow_run:
+    workflows: ["Ontology verification"]
+    types: [completed]
+
+permissions:
+  contents: write  # if you push to wiki or to gh-pages
+  pages: write
+  id-token: write
+
+jobs:
+  wiki:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    uses: Airy59/OntoQA/.github/workflows/docs-wiki.yml@main
