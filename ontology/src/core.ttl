@@ -136,19 +136,35 @@ prov:wasAttributedTo rdf:type owl:ObjectProperty ;
 prov:wasRevisionOf rdf:type owl:ObjectProperty .
 
 
-###  https://cdm.ovh/taf/tafp5#atOperationalLocation
-<https://cdm.ovh/taf/tafp5#atOperationalLocation> rdf:type owl:ObjectProperty ;
-                                                  rdfs:subPropertyOf dul:hasLocation ;
-                                                  owl:inverseOf <https://cdm.ovh/taf/tafp5#isOperationalLocationOf> ;
-                                                  rdfs:domain <https://cdm.ovh/taf/tafp5#TrainLocationState> ,
-                                                              [ rdf:type owl:Class ;
-                                                                owl:unionOf ( <https://cdm.ovh/taf/tafp5#Facility>
-                                                                              <https://cdm.ovh/taf/tafp5#Track>
-                                                                            )
-                                                              ] ;
-                                                  rdfs:range <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
-                                                  rdfs:comment "For time-independent locations (e.g. of Facilities)"@en ;
-                                                  rdfs:label "at operational location"^^xsd:language .
+###  https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation
+rope:atOperationalLocation rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf dul:hasLocation ;
+                           owl:inverseOf rope:isOperationalLocationOf ;
+                           rdfs:domain <https://cdm.ovh/taf/tafp5#TrainLocationState> ,
+                                       [ rdf:type owl:Class ;
+                                         owl:unionOf ( <https://cdm.ovh/taf/tafp5#Facility>
+                                                       <https://cdm.ovh/taf/tafp5#Track>
+                                                     )
+                                       ] ;
+                           rdfs:range <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
+                           rdfs:comment "For time-independent locations (e.g. of Facilities)"@en ;
+                           rdfs:label "at operational location"^^xsd:language .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#hasTrain
+rope:hasTrain rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf dul:hasParticipant ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain <https://cdm.ovh/taf/tafp5#OperationalProcess> ;
+              rdfs:range <https://cdm.ovh/taf/tafp5#Train> ;
+              rdfs:comment "refers to the train (rolling stock, supplies, loads) that participates in the operational process."@en ;
+              rdfs:label "has train"@en .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#isOperationalLocationOf
+rope:isOperationalLocationOf rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf dul:isLocationOf ;
+                             rdfs:label "is operational location of"@en .
 
 
 ###  https://cdm.ovh/taf/tafp5#atTime
@@ -368,16 +384,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
                                             rdfs:label "has temporal role"@en .
 
 
-###  https://cdm.ovh/taf/tafp5#hasTrain
-<https://cdm.ovh/taf/tafp5#hasTrain> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf dul:hasParticipant ;
-                                     rdf:type owl:FunctionalProperty ;
-                                     rdfs:domain <https://cdm.ovh/taf/tafp5#OperationalProcess> ;
-                                     rdfs:range <https://cdm.ovh/taf/tafp5#Train> ;
-                                     rdfs:comment "refers to the train (rolling stock, supplies, loads) that participates in the operational process."@en ;
-                                     rdfs:label "has train"@en .
-
-
 ###  https://cdm.ovh/taf/tafp5#hasTrainRunState
 <https://cdm.ovh/taf/tafp5#hasTrainRunState> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <https://cdm.ovh/taf/tafp5#isStateOfTrainRun> ;
@@ -396,12 +402,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
 ###  https://cdm.ovh/taf/tafp5#inJourneySchedule
 <https://cdm.ovh/taf/tafp5#inJourneySchedule> rdf:type owl:ObjectProperty ;
                                               rdfs:label "in journey schedule"@en .
-
-
-###  https://cdm.ovh/taf/tafp5#isOperationalLocationOf
-<https://cdm.ovh/taf/tafp5#isOperationalLocationOf> rdf:type owl:ObjectProperty ;
-                                                    rdfs:subPropertyOf dul:isLocationOf ;
-                                                    rdfs:label "is operational location of"@en .
 
 
 ###  https://cdm.ovh/taf/tafp5#isStateOfTrainRun
