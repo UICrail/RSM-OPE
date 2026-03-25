@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="TAF_revisited" version="http://cdm.ovh/taf/0.1/tafp5#">
-    <ontology addLabelFromSimpleName="0" addLabelFromUserInput="0" lang="en" iri="http://cdm.ovh/taf/tafp5#">
+  <project name="TAF_revisited" version="http://cdm.ovh/rsm/operations/rope/0.1/rope">
+    <ontology addLabelFromSimpleName="0" addLabelFromUserInput="0" lang="en" iri="http://cdm.ovh/rsm/operations/rope/rope">
       <imports>
         <import location="https://cdm.ovh/rst/cons/cons" isLocal="0" version="http://cdm.ovh/rst/cons/cons" iri="http://cdm.ovh/rst/cons/cons"/>
       </imports>
@@ -43,6 +43,10 @@
           <namespace>http://www.w3.org/ns/regorg#</namespace>
         </prefix>
         <prefix>
+          <value>rope</value>
+          <namespace>https://cdm.ovh/rsm/operations/rope/rope#</namespace>
+        </prefix>
+        <prefix>
           <value>rst-cons</value>
           <namespace>https://cdm.ovh/rst/cons/cons#</namespace>
         </prefix>
@@ -53,10 +57,6 @@
         <prefix>
           <value>skos</value>
           <namespace>http://www.w3.org/2004/02/skos/core#</namespace>
-        </prefix>
-        <prefix>
-          <value>taf</value>
-          <namespace>http://data.europa.eu/949/</namespace>
         </prefix>
         <prefix>
           <value>time</value>
@@ -139,6 +139,52 @@
         <annotationProperty>http://www.w3.org/2002/07/owl#versionInfo</annotationProperty>
       </annotationProperties>
       <iris>
+        <iri>
+          <value>http://cdm.ovh/rsm/operations/rope</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/taf/tafp5#</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>In the context of operations in general, and the TAF TSI in particular, "weight"  is often used instead of "mass" while the latter is correct (and units are indeed mass units, e.g. kg). In the present ontology, we only use "mass"  in identifiers and labels.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>http://cdm.ovh/rsm/operations/rope/rope</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/taf/tafp5#</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>In the context of operations in general, and the TAF TSI in particular, "weight"  is often used instead of "mass" while the latter is correct (and units are indeed mass units, e.g. kg). In the present ontology, we only use "mass"  in identifiers and labels.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>http://cdm.ovh/rsm/operations/rope/rope</subject>
+              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
+              <object>
+                <lexicalForm>0.1 First release as ROPE (RSM Operations)</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>http://cdm.ovh/rsm/operations/rope/rope</subject>
+              <property>http://www.w3.org/2002/07/owl#priorVersion</property>
+              <object>
+                <lexicalForm>was tafp5 (deprecated)</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
         <iri>
           <value>http://cdm.ovh/rsm/rolling_stock/rolling_stock_consist#Extremity</value>
         </iri>
@@ -263,7 +309,7 @@
               <subject>https://cdm.ovh/taf/tafp5#</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
-                <lexicalForm>In the context of operations in general, and the TAF TSI in particular, "weight"  is often used instead of "mass" while the latter is correct (and units are always mass units such as kg). In the present ontology, we only use "mass"  in identifiers and labels.</lexicalForm>
+                <lexicalForm>In the context of operations in general, and the TAF TSI in particular, "weight"  is often used instead of "mass" while the latter is correct (and units are indeed mass units, e.g. kg). In the present ontology, we only use "mass"  in identifiers and labels.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
