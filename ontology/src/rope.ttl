@@ -19,7 +19,8 @@
 
 <http://cdm.ovh/rsm/operations/rope/rope> rdf:type owl:Ontology ;
                                            owl:versionIRI <http://cdm.ovh/rsm/operations/rope/0.1/rope> ;
-                                           owl:imports <http://cdm.ovh/rst/cons/cons> ;
+                                           owl:imports <http://cdm.ovh/rst/cons/cons> ,
+                                                       <https://cdm.ovh/rsm/network/netw> ;
                                            rdfs:comment "In the context of operations in general, and the TAF TSI in particular, \"weight\"  is often used instead of \"mass\" while the latter is correct (and units are indeed mass units, e.g. kg). In the present ontology, we only use \"mass\"  in identifiers and labels."@en ;
                                            owl:priorVersion "was tafp5 (deprecated)"@en ;
                                            owl:versionInfo "0.1 First release as ROPE (RSM Operations)"@en .
@@ -140,22 +141,15 @@ prov:wasRevisionOf rdf:type owl:ObjectProperty .
 rope:atOperationalLocation rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf dul:hasLocation ;
                            owl:inverseOf rope:isOperationalLocationOf ;
-                           rdfs:domain <https://cdm.ovh/taf/tafp5#TrainLocationState> ,
-                                       [ rdf:type owl:Class ;
-                                         owl:unionOf ( <https://cdm.ovh/taf/tafp5#Facility>
-                                                       <https://cdm.ovh/taf/tafp5#Track>
-                                                     )
-                                       ] ;
-                           rdfs:range <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
-                           rdfs:comment "For time-independent locations (e.g. of Facilities)"@en ;
+                           rdfs:range rope:OperationalLocation ;
+                           rdfs:comment "provides time-independent operational location of anything, including bit not limited toTracks or Facilities (both being NetEntities), or TrainRuns."@en ;
                            rdfs:label "at operational location"^^xsd:language .
 
 
 ###  https://cdm.ovh/rsm/operations/rope/rope#hasTrain
 rope:hasTrain rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf dul:hasParticipant ;
-              rdf:type owl:FunctionalProperty ;
-              rdfs:domain <https://cdm.ovh/taf/tafp5#OperationalProcess> ;
+              rdfs:domain rope:Circulation ;
               rdfs:range <https://cdm.ovh/taf/tafp5#Train> ;
               rdfs:comment "refers to the train (rolling stock, supplies, loads) that participates in the operational process."@en ;
               rdfs:label "has train"@en .
@@ -164,6 +158,7 @@ rope:hasTrain rdf:type owl:ObjectProperty ;
 ###  https://cdm.ovh/rsm/operations/rope/rope#isOperationalLocationOf
 rope:isOperationalLocationOf rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf dul:isLocationOf ;
+                             rdfs:comment "inverse property of atOperationalLocation."@en ;
                              rdfs:label "is operational location of"@en .
 
 
@@ -214,7 +209,7 @@ rope:isOperationalLocationOf rdf:type owl:ObjectProperty ;
 <https://cdm.ovh/taf/tafp5#hasDestination> rdf:type owl:ObjectProperty ,
                                                     owl:FunctionalProperty ;
                                            rdfs:domain <https://cdm.ovh/taf/tafp5#JourneySchedule> ;
-                                           rdfs:range <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
+                                           rdfs:range rope:OperationalLocation ;
                                            rdfs:label "has destination"@en .
 
 
@@ -228,7 +223,7 @@ rope:isOperationalLocationOf rdf:type owl:ObjectProperty ;
 ###  https://cdm.ovh/taf/tafp5#hasFacilityFunction
 <https://cdm.ovh/taf/tafp5#hasFacilityFunction> rdf:type owl:ObjectProperty ;
                                                 rdfs:subPropertyOf dul:isClassifiedBy ;
-                                                rdfs:domain <https://cdm.ovh/taf/tafp5#Facility> ;
+                                                rdfs:domain rope:Facility ;
                                                 rdfs:range <https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction> ;
                                                 rdfs:label "has facility function"@en .
 
@@ -291,7 +286,7 @@ rope:isOperationalLocationOf rdf:type owl:ObjectProperty ;
 <https://cdm.ovh/taf/tafp5#hasOperationalLocation> rdf:type owl:ObjectProperty ,
                                                             owl:FunctionalProperty ;
                                                    rdfs:domain <https://cdm.ovh/taf/tafp5#StaticSection> ;
-                                                   rdfs:range <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
+                                                   rdfs:range rope:OperationalLocation ;
                                                    rdfs:label "has operational location"@en .
 
 
@@ -299,7 +294,7 @@ rope:isOperationalLocationOf rdf:type owl:ObjectProperty ;
 <https://cdm.ovh/taf/tafp5#hasOrigin> rdf:type owl:ObjectProperty ,
                                                owl:FunctionalProperty ;
                                       rdfs:domain <https://cdm.ovh/taf/tafp5#JourneySchedule> ;
-                                      rdfs:range <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
+                                      rdfs:range rope:OperationalLocation ;
                                       rdfs:label "has origin"@en .
 
 
@@ -434,7 +429,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
 ###  https://cdm.ovh/taf/tafp5#playsFacilityRole
 <https://cdm.ovh/taf/tafp5#playsFacilityRole> rdf:type owl:ObjectProperty ;
                                               rdfs:subPropertyOf dul:playsRole ;
-                                              rdfs:domain <https://cdm.ovh/taf/tafp5#Facility> ;
+                                              rdfs:domain rope:Facility ;
                                               rdfs:range <https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction> ;
                                               rdfs:label "plays facility role"@en .
 
@@ -533,6 +528,29 @@ prov:generatedAtTime rdf:type owl:DatatypeProperty ;
 prov:invalidatedAtTime rdf:type owl:DatatypeProperty .
 
 
+###  https://cdm.ovh/rsm/operations/rope/rope#hasPrimaryCode
+rope:hasPrimaryCode rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain rope:OperationalLocation ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has primary code"@en .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#hasSubsidiaryCode
+rope:hasSubsidiaryCode rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain rope:OperationalLocation ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has subsidiary code"@en .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#locationName
+rope:locationName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain rope:OperationalLocation ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "location name"@en .
+
+
 ###  https://cdm.ovh/taf/tafp5#asPNG
 <https://cdm.ovh/taf/tafp5#asPNG> rdf:type owl:DatatypeProperty ,
                                            owl:FunctionalProperty ;
@@ -601,7 +619,7 @@ prov:invalidatedAtTime rdf:type owl:DatatypeProperty .
 
 ###  https://cdm.ovh/taf/tafp5#hasDesignation
 <https://cdm.ovh/taf/tafp5#hasDesignation> rdf:type owl:DatatypeProperty ;
-                                           rdfs:domain <https://cdm.ovh/taf/tafp5#Track> ;
+                                           rdfs:domain rope:Track ;
                                            rdfs:range xsd:string ;
                                            rdfs:comment "Designation: to be discussed. Probably not unique. Can have short or long forms (e.g. \"Track 5\"  in the context of some yard; \"Alnabru yard track 5\" in a larger context)."@en ;
                                            rdfs:label "has designation"@en .
@@ -661,14 +679,6 @@ prov:invalidatedAtTime rdf:type owl:DatatypeProperty .
                                          rdfs:label "has other code"@en .
 
 
-###  https://cdm.ovh/taf/tafp5#hasPrimaryCode
-<https://cdm.ovh/taf/tafp5#hasPrimaryCode> rdf:type owl:DatatypeProperty ,
-                                                    owl:FunctionalProperty ;
-                                           rdfs:domain <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
-                                           rdfs:range xsd:string ;
-                                           rdfs:label "has primary code"@en .
-
-
 ###  https://cdm.ovh/taf/tafp5#hasRFIDIdentifier
 <https://cdm.ovh/taf/tafp5#hasRFIDIdentifier> rdf:type owl:DatatypeProperty ,
                                                        owl:FunctionalProperty ;
@@ -714,14 +724,6 @@ prov:invalidatedAtTime rdf:type owl:DatatypeProperty .
                                      rdfs:label "has speed"@en .
 
 
-###  https://cdm.ovh/taf/tafp5#hasSubsidiaryCode
-<https://cdm.ovh/taf/tafp5#hasSubsidiaryCode> rdf:type owl:DatatypeProperty ,
-                                                       owl:FunctionalProperty ;
-                                              rdfs:domain <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
-                                              rdfs:range xsd:string ;
-                                              rdfs:label "has subsidiary code"@en .
-
-
 ###  https://cdm.ovh/taf/tafp5#isStationary
 <https://cdm.ovh/taf/tafp5#isStationary> rdf:type owl:DatatypeProperty ,
                                                   owl:FunctionalProperty ;
@@ -737,13 +739,6 @@ prov:invalidatedAtTime rdf:type owl:DatatypeProperty .
                                      rdfs:range xsd:dateTimeStamp ;
                                      rdfs:comment "Timestamp when the forecast value (most common case) or any other time value was generated or last updated"@en ;
                                      rdfs:label "issued at" .
-
-
-###  https://cdm.ovh/taf/tafp5#locationName
-<https://cdm.ovh/taf/tafp5#locationName> rdf:type owl:DatatypeProperty ;
-                                         rdfs:domain <https://cdm.ovh/taf/tafp5#OperationalLocation> ;
-                                         rdfs:range xsd:string ;
-                                         rdfs:label "location name"@en .
 
 
 ###  https://cdm.ovh/taf/tafp5#messageID
@@ -931,6 +926,66 @@ regorg:RegisteredOrganization rdf:type owl:Class ;
                               rdfs:subClassOf org:Organization .
 
 
+###  https://cdm.ovh/rsm/network/netw#NetEntity
+<https://cdm.ovh/rsm/network/netw#NetEntity> rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#Circulation
+rope:Circulation rdf:type owl:Class ;
+                 rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalProcess> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty dul:hasTimeInterval ;
+                                   owl:allValuesFrom <https://cdm.ovh/taf/tafp5#OperationalInterval>
+                                 ] ;
+                 rdfs:label "Train process"@en .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#Facility
+rope:Facility rdf:type owl:Class ;
+              rdfs:subClassOf <https://cdm.ovh/rsm/network/netw#NetEntity> ,
+                              <https://cdm.ovh/taf/tafp5#OperationalArtifact> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty rope:atOperationalLocation ;
+                                owl:allValuesFrom rope:OperationalLocation
+                              ] ;
+              rdfs:comment "Class for facilities pertaining to operations, e.g. a maintenance shop, a yard, a train washing machine..."@en ;
+              rdfs:label "Facility"@en .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#Load
+rope:Load rdf:type owl:Class ;
+          rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalArtifact> ;
+          rdfs:label "Load"@en .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation
+rope:OperationalLocation rdf:type owl:Class ;
+                         rdfs:subClassOf dul:Place ,
+                                         <https://cdm.ovh/taf/tafp5#OperationalEntity> ;
+                         rdfs:comment "TAF TSI ontology: identifies a Location using a LocationIdent"@en ;
+                         rdfs:label "Operational location"@en ;
+                         rdfs:seeAlso "http://data.europa.eu/949/Location"^^xsd:anyURI .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#ShuntingMovement
+rope:ShuntingMovement rdf:type owl:Class ;
+                      rdfs:subClassOf rope:Circulation ;
+                      rdfs:label "Shunting movement"@en .
+
+
+###  https://cdm.ovh/rsm/operations/rope/rope#Track
+rope:Track rdf:type owl:Class ;
+           rdfs:subClassOf <https://cdm.ovh/rsm/network/netw#NetEntity> ,
+                           <https://cdm.ovh/taf/tafp5#OperationalArtifact> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty rope:atOperationalLocation ;
+                             owl:allValuesFrom rope:OperationalLocation
+                           ] ;
+           rdfs:comment "Note: atOperationalLocation is provided by superclass OperationalArtifact"@en ,
+                        "Track in the operational sense, i.e. a stretch of track, usually continuous, that is individuated in operating (driving, shunting) instructions."@en ;
+           rdfs:label "Track"@en .
+
+
 ###  https://cdm.ovh/taf/tafp5#AdministrativeState
 <https://cdm.ovh/taf/tafp5#AdministrativeState> rdf:type owl:Class ;
                                                 rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalState> ;
@@ -968,13 +1023,6 @@ regorg:RegisteredOrganization rdf:type owl:Class ;
                                             rdfs:label "Executed journey"@en .
 
 
-###  https://cdm.ovh/taf/tafp5#Facility
-<https://cdm.ovh/taf/tafp5#Facility> rdf:type owl:Class ;
-                                     rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalArtifact> ;
-                                     owl:disjointWith <https://cdm.ovh/taf/tafp5#Track> ;
-                                     rdfs:label "Facility"@en .
-
-
 ###  https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction
 <https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction> rdf:type owl:Class ;
                                                    rdfs:subClassOf skos:Concept ;
@@ -992,7 +1040,7 @@ regorg:RegisteredOrganization rdf:type owl:Class ;
 
 ###  https://cdm.ovh/taf/tafp5#ITU
 <https://cdm.ovh/taf/tafp5#ITU> rdf:type owl:Class ;
-                                rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalArtifact> ;
+                                rdfs:subClassOf rope:Load ;
                                 owl:disjointWith <https://cdm.ovh/taf/tafp5#Wagon> ;
                                 rdfs:label "Intermodal Transport Unit"@en .
 
@@ -1118,23 +1166,10 @@ Message payloads are mostly Operational States or VersionedDescriptions."""@en ;
                                                 rdfs:label "Operational interval"@en .
 
 
-###  https://cdm.ovh/taf/tafp5#OperationalLocation
-<https://cdm.ovh/taf/tafp5#OperationalLocation> rdf:type owl:Class ;
-                                                rdfs:subClassOf dul:Place ,
-                                                                <https://cdm.ovh/taf/tafp5#OperationalEntity> ;
-                                                rdfs:comment "TAF TSI ontology: identifies a Location using a LocationIdent"@en ;
-                                                rdfs:label "Operational location"@en ;
-                                                rdfs:seeAlso "http://data.europa.eu/949/Location"^^xsd:anyURI .
-
-
 ###  https://cdm.ovh/taf/tafp5#OperationalProcess
 <https://cdm.ovh/taf/tafp5#OperationalProcess> rdf:type owl:Class ;
                                                rdfs:subClassOf dul:Process ,
-                                                               <https://cdm.ovh/taf/tafp5#OperationalEntity> ,
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty dul:hasTimeInterval ;
-                                                                 owl:allValuesFrom <https://cdm.ovh/taf/tafp5#OperationalInterval>
-                                                               ] ;
+                                                               <https://cdm.ovh/taf/tafp5#OperationalEntity> ;
                                                rdfs:label "Operational process"@en .
 
 
@@ -1256,14 +1291,6 @@ Message payloads are mostly Operational States or VersionedDescriptions."""@en ;
                                          rdfs:label "Temporal role"@en .
 
 
-###  https://cdm.ovh/taf/tafp5#Track
-<https://cdm.ovh/taf/tafp5#Track> rdf:type owl:Class ;
-                                  rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalArtifact> ;
-                                  rdfs:comment "Note: atOperationalLocation is provided by superclass OperationalArtifact"@en ,
-                                               "Track in the operational sense, i.e. a stretch of track, usually continuous, that is individuated in operating (driving, shunting) instructions."@en ;
-                                  rdfs:label "Track"@en .
-
-
 ###  https://cdm.ovh/taf/tafp5#TractionProvisionRole
 <https://cdm.ovh/taf/tafp5#TractionProvisionRole> rdf:type owl:Class ;
                                                   rdfs:subClassOf dul:Role ,
@@ -1320,7 +1347,11 @@ To be differetiated from (possible, not included) traction provider role, the ag
 
 ###  https://cdm.ovh/taf/tafp5#TrainLocationState
 <https://cdm.ovh/taf/tafp5#TrainLocationState> rdf:type owl:Class ;
-                                               rdfs:subClassOf <https://cdm.ovh/taf/tafp5#TrainRunState> ;
+                                               rdfs:subClassOf <https://cdm.ovh/taf/tafp5#TrainRunState> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty rope:atOperationalLocation ;
+                                                                 owl:allValuesFrom rope:OperationalLocation
+                                                               ] ;
                                                rdfs:label "Train location state"@en .
 
 
@@ -1339,7 +1370,7 @@ To be differetiated from (possible, not included) traction provider role, the ag
 
 ###  https://cdm.ovh/taf/tafp5#TrainRun
 <https://cdm.ovh/taf/tafp5#TrainRun> rdf:type owl:Class ;
-                                     rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalProcess> ,
+                                     rdfs:subClassOf rope:Circulation ,
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty <https://cdm.ovh/taf/tafp5#hasSubProcess> ;
                                                        owl:allValuesFrom <https://cdm.ovh/taf/tafp5#TrainService>
@@ -1644,6 +1675,29 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rope:Facility
+                rope:Load
+                rope:Track
+                <https://cdm.ovh/taf/tafp5#Train>
+                <https://cdm.ovh/taf/tafp5#Wagon>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rope:OperationalLocation
+                <https://cdm.ovh/taf/tafp5#LoadRole>
+                <https://cdm.ovh/taf/tafp5#OperationalArtifact>
+                <https://cdm.ovh/taf/tafp5#OperationalProcess>
+                <https://cdm.ovh/taf/tafp5#OperationalRole>
+                <https://cdm.ovh/taf/tafp5#OperationalState>
+                <https://cdm.ovh/taf/tafp5#TractionProvisionRole>
+                <https://cdm.ovh/taf/tafp5#VersionedDescription>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( <https://cdm.ovh/taf/tafp5#Container>
                 <https://cdm.ovh/taf/tafp5#SwapBody>
                 <https://cdm.ovh/taf/tafp5#Trailer>
@@ -1652,32 +1706,9 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <https://cdm.ovh/taf/tafp5#Facility>
-                <https://cdm.ovh/taf/tafp5#ITU>
-                <https://cdm.ovh/taf/tafp5#Track>
-                <https://cdm.ovh/taf/tafp5#Train>
-                <https://cdm.ovh/taf/tafp5#Wagon>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( <https://cdm.ovh/taf/tafp5#ITU>
                 <https://cdm.ovh/taf/tafp5#TrainRun>
                 <https://cdm.ovh/taf/tafp5#Wagon>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <https://cdm.ovh/taf/tafp5#LoadRole>
-                <https://cdm.ovh/taf/tafp5#OperationalArtifact>
-                <https://cdm.ovh/taf/tafp5#OperationalLocation>
-                <https://cdm.ovh/taf/tafp5#OperationalProcess>
-                <https://cdm.ovh/taf/tafp5#OperationalRole>
-                <https://cdm.ovh/taf/tafp5#OperationalState>
-                <https://cdm.ovh/taf/tafp5#TractionProvisionRole>
-                <https://cdm.ovh/taf/tafp5#VersionedDescription>
               )
 ] .
 

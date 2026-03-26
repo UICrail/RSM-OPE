@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="TAF_revisited" version="http://cdm.ovh/rsm/operations/rope/0.1/rope">
+  <project name="rope" version="http://cdm.ovh/rsm/operations/rope/0.1/rope">
     <ontology addLabelFromSimpleName="0" addLabelFromUserInput="0" lang="en" iri="http://cdm.ovh/rsm/operations/rope/rope">
       <imports>
         <import location="https://cdm.ovh/rst/cons/cons" isLocal="0" version="http://cdm.ovh/rst/cons/cons" iri="http://cdm.ovh/rst/cons/cons"/>
+        <import location="https://cdm.ovh/rsm/network/netw" isLocal="0" version="https://cdm.ovh/rsm/network/netw/0.1" iri="https://cdm.ovh/rsm/network/netw"/>
       </imports>
       <prefixes>
         <prefix>
@@ -1525,6 +1526,338 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
           <value>http://www.w3.org/ns/regorg#RegisteredOrganization</value>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/network/netw#ContainingEntity</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#InfrastructureManager</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#LegalEntity</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetEntity</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetEntityCollection</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetworkLayout</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetworkManagement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#NetworkTopology</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#ObservedNetworkLayout</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#PlannedNetworkLayout</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#RailwayInfrastructureArtefact</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#RailwayNetwork</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#SelectionCriterion</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#SubNetwork</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#TopologyGraph</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#concernsNetwork</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#containsEntity</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#containsEntityTransitive</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#definedByCollection</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasInfrastructureManager</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasSelectionCriterion</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasSubNetwork</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#hasTopology</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#involvesNetwork</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#isContainedIn</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#isContainedInTransitive</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#isSubNetworkOf</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#selectedFromNetwork</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/network/netw#serializedAs</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#Circulation</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#Circulation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Train process</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#Facility</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#Facility</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Facility</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#Facility</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Class for facilities pertaining to operations, e.g. a maintenance shop, a yard, a train washing machine...</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#Load</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#Load</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Load</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Operational location</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>TAF TSI ontology: identifies a Location using a LocationIdent</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#seeAlso</property>
+              <object>
+                <lexicalForm>http://data.europa.eu/949/Location</lexicalForm>
+                <datatype>http://www.w3.org/2001/XMLSchema#anyURI</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#ShuntingMovement</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#ShuntingMovement</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Shunting movement</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#Track</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#Track</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Track</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#Track</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Track in the operational sense, i.e. a stretch of track, usually continuous, that is individuated in operating (driving, shunting) instructions.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#Track</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Note: atOperationalLocation is provided by superclass OperationalArtifact</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>at operational location</lexicalForm>
+                <datatype>http://www.w3.org/2001/XMLSchema#language</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>provides time-independent operational location of anything, including bit not limited toTracks or Facilities (both being NetEntities), or TrainRuns.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#hasPrimaryCode</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#hasPrimaryCode</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has primary code</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#hasSubsidiaryCode</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#hasSubsidiaryCode</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has subsidiary code</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#hasTrain</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#hasTrain</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has train</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#hasTrain</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>refers to the train (rolling stock, supplies, loads) that participates in the operational process.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#isOperationalLocationOf</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#isOperationalLocationOf</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is operational location of</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#isOperationalLocationOf</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>inverse property of atOperationalLocation.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#locationName</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#locationName</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>location name</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/time/time#hasValidityInterval</value>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rst/cons/cons#Bottom</value>
         </iri>
         <iri>
@@ -1761,20 +2094,6 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Executed journey</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/taf/tafp5#Facility</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#Facility</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Facility</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -2250,38 +2569,6 @@ Message payloads are mostly Operational States or VersionedDescriptions.</lexica
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/taf/tafp5#OperationalLocation</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#OperationalLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Operational location</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#OperationalLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>TAF TSI ontology: identifies a Location using a LocationIdent</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#OperationalLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#seeAlso</property>
-              <object>
-                <lexicalForm>http://data.europa.eu/949/Location</lexicalForm>
-                <datatype>http://www.w3.org/2001/XMLSchema#anyURI</datatype>
-                <language/>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://cdm.ovh/taf/tafp5#OperationalProcess</value>
           <annotations>
             <annotation>
@@ -2659,38 +2946,6 @@ Message payloads are mostly Operational States or VersionedDescriptions.</lexica
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>Role definition for operational instants or (time) intervals. More instances can be added (e.g. "contractual"), but in any case the context (situation) should be expressed (planned in what document? forecast by whom?), lest the roles be purely decorative.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/taf/tafp5#Track</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#Track</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Track</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#Track</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>Track in the operational sense, i.e. a stretch of track, usually continuous, that is individuated in operating (driving, shunting) instructions.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#Track</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>Note: atOperationalLocation is provided by superclass OperationalArtifact</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -3270,29 +3525,6 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>single string, using WKT serialization</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/taf/tafp5#atOperationalLocation</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#atOperationalLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>at operational location</lexicalForm>
-                <datatype>http://www.w3.org/2001/XMLSchema#language</datatype>
-                <language/>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#atOperationalLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>For time-independent locations (e.g. of Facilities)</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -3949,21 +4181,6 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/taf/tafp5#hasPrimaryCode</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#hasPrimaryCode</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has primary code</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://cdm.ovh/taf/tafp5#hasRFIDIdentifier</value>
           <functional/>
           <annotations>
@@ -4162,21 +4379,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/taf/tafp5#hasSubsidiaryCode</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#hasSubsidiaryCode</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has subsidiary code</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://cdm.ovh/taf/tafp5#hasTemporalRole</value>
           <annotations>
             <annotation>
@@ -4184,30 +4386,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has temporal role</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/taf/tafp5#hasTrain</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#hasTrain</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has train</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#hasTrain</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>refers to the train (rolling stock, supplies, loads) that participates in the operational process.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -4252,20 +4430,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>in journey schedule</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/taf/tafp5#isOperationalLocationOf</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#isOperationalLocationOf</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>is operational location of</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -4336,20 +4500,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
                 <lexicalForm>leading locomotive role</lexicalForm>
                 <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
                 <language/>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/taf/tafp5#locationName</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#locationName</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>location name</lexicalForm>
-                <datatype/>
-                <language>en</language>
               </object>
             </annotation>
           </annotations>
@@ -4863,9 +5013,9 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <label x="80" size="12" height="23" y="720" customSize="0" width="145"/>
         </node>
         <node id="n25" color="#c2b078" type="concept">
-          <geometry x="351" height="50" y="120" width="145"/>
+          <geometry x="470" height="50" y="127" width="145"/>
           <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact</iri>
-          <label x="351" size="12" height="23" y="120" customSize="0" width="145"/>
+          <label x="470" size="12" height="23" y="127" customSize="0" width="145"/>
         </node>
         <node id="n26" color="#fcfcfc" type="concept">
           <geometry x="60" height="50" y="140" width="110"/>
@@ -4879,13 +5029,13 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n29" color="#fcfcfc" type="concept">
           <geometry x="60" height="50" y="350" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#Facility</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#Facility</iri>
           <label x="60" size="12" height="23" y="350" customSize="0" width="110"/>
         </node>
         <node id="n3" color="#fcfcfc" type="concept">
-          <geometry x="60" height="50" y="-90" width="110"/>
+          <geometry x="70" height="50" y="-160" width="125"/>
           <iri>https://cdm.ovh/taf/tafp5#TrainRun</iri>
-          <label x="60" size="12" height="23" y="-90" customSize="0" width="110"/>
+          <label x="70" size="12" height="23" y="-160" customSize="0" width="125"/>
         </node>
         <node id="n30" color="#fcfcfc" type="concept">
           <geometry x="60" height="50" y="210" width="110"/>
@@ -4894,16 +5044,16 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n31" color="#fcfcfc" type="concept">
           <geometry x="60" height="50" y="280" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#Track</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#Track</iri>
           <label x="60" size="12" height="23" y="280" customSize="0" width="110"/>
         </node>
         <node id="n32" color="#fcfcfc" type="concept">
-          <geometry x="350" height="57" y="213" width="160"/>
+          <geometry x="470" height="57" y="210" width="160"/>
           <iri>https://cdm.ovh/taf/tafp5#OperationalArtifact</iri>
-          <label x="350" size="12" height="23" y="213" customSize="0" width="160"/>
+          <label x="470" size="12" height="23" y="210" customSize="0" width="160"/>
         </node>
         <node id="n33" color="#000000" type="disjoint-union">
-          <geometry x="220" height="30" y="210" width="50"/>
+          <geometry x="340" height="30" y="207" width="50"/>
         </node>
         <node id="n36" color="#c2b078" type="concept">
           <geometry x="-120" height="50" y="640" width="145"/>
@@ -4916,9 +5066,9 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <label x="90" size="12" height="23" y="632" customSize="0" width="165"/>
         </node>
         <node id="n4" color="#c2b078" type="concept">
-          <geometry x="350" height="50" y="-171" width="145"/>
+          <geometry x="470" height="50" y="-171" width="145"/>
           <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process</iri>
-          <label x="350" size="12" height="23" y="-171" customSize="0" width="145"/>
+          <label x="470" size="12" height="23" y="-171" customSize="0" width="145"/>
         </node>
         <node id="n40" color="#c2b078" type="concept">
           <geometry x="-117" height="50" y="930" width="145"/>
@@ -4926,9 +5076,24 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <label x="-117" size="12" height="23" y="930" customSize="0" width="145"/>
         </node>
         <node id="n42" color="#fcfcfc" type="concept">
-          <geometry x="350" height="50" y="-90" width="160"/>
+          <geometry x="470" height="50" y="-90" width="160"/>
           <iri>https://cdm.ovh/taf/tafp5#OperationalProcess</iri>
-          <label x="350" size="12" height="23" y="-90" customSize="0" width="160"/>
+          <label x="470" size="12" height="23" y="-90" customSize="0" width="160"/>
+        </node>
+        <node id="n43" color="#fcfcfc" type="concept">
+          <geometry x="260" height="50" y="-90" width="110"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#Circulation</iri>
+          <label x="260" size="12" height="23" y="-90" customSize="0" width="110"/>
+        </node>
+        <node id="n44" color="#fcfcfc" type="concept">
+          <geometry x="70" height="50" y="-90" width="125"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#ShuntingMovement</iri>
+          <label x="70" size="12" height="23" y="-90" customSize="0" width="125"/>
+        </node>
+        <node id="n45" color="#fcfcfc" type="concept">
+          <geometry x="210" height="50" y="210" width="110"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#Load</iri>
+          <label x="210" size="12" height="23" y="210" customSize="0" width="110"/>
         </node>
         <node id="n5" color="#000000" type="disjoint-union">
           <geometry x="620" height="30" y="480" width="50"/>
@@ -4945,7 +5110,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n9" color="#fcfcfc" type="concept">
           <geometry x="82" height="50" y="-10" width="155"/>
-          <iri>https://cdm.ovh/taf/tafp5#OperationalLocation</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
           <label x="82" size="12" height="23" y="-10" customSize="0" width="155"/>
         </node>
         <edge id="e12" target="n5" type="input" source="n14">
@@ -4991,41 +5156,37 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <point x="757" y="480"/>
         </edge>
         <edge id="e40" target="n5" type="input" source="n32">
-          <point x="350" y="213"/>
+          <point x="470" y="210"/>
           <point x="590" y="210"/>
           <point x="620" y="480"/>
         </edge>
         <edge id="e41" target="n33" type="input" source="n29">
           <point x="60" y="350"/>
           <point x="220" y="350"/>
-          <point x="220" y="210"/>
+          <point x="340" y="207"/>
         </edge>
         <edge id="e42" target="n33" type="input" source="n31">
           <point x="60" y="280"/>
           <point x="200" y="280"/>
-          <point x="220" y="210"/>
-        </edge>
-        <edge id="e43" target="n33" type="input" source="n30">
-          <point x="60" y="210"/>
-          <point x="220" y="210"/>
+          <point x="340" y="207"/>
         </edge>
         <edge id="e44" target="n33" type="input" source="n26">
           <point x="60" y="140"/>
           <point x="200" y="140"/>
-          <point x="220" y="210"/>
+          <point x="340" y="207"/>
         </edge>
         <edge id="e45" target="n33" type="input" source="n27">
           <point x="60" y="70"/>
           <point x="220" y="70"/>
-          <point x="220" y="210"/>
+          <point x="340" y="207"/>
         </edge>
         <edge id="e46" target="n32" type="inclusion" source="n33">
-          <point x="220" y="210"/>
-          <point x="350" y="213"/>
+          <point x="340" y="207"/>
+          <point x="470" y="210"/>
         </edge>
         <edge id="e47" target="n25" type="inclusion" source="n32">
-          <point x="350" y="213"/>
-          <point x="351" y="120"/>
+          <point x="470" y="210"/>
+          <point x="470" y="127"/>
         </edge>
         <edge id="e51" target="n5" type="input" source="n37">
           <point x="90" y="640"/>
@@ -5037,17 +5198,33 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <point x="-120" y="640"/>
         </edge>
         <edge id="e56" target="n5" type="input" source="n42">
-          <point x="350" y="-90"/>
+          <point x="470" y="-90"/>
           <point x="590" y="-90"/>
           <point x="620" y="480"/>
         </edge>
         <edge id="e57" target="n4" type="inclusion" source="n42">
-          <point x="350" y="-90"/>
-          <point x="350" y="-171"/>
+          <point x="470" y="-90"/>
+          <point x="470" y="-171"/>
         </edge>
-        <edge id="e58" target="n42" type="inclusion" source="n3">
-          <point x="60" y="-90"/>
-          <point x="350" y="-90"/>
+        <edge id="e59" target="n42" type="inclusion" source="n43">
+          <point x="260" y="-90"/>
+          <point x="470" y="-90"/>
+        </edge>
+        <edge id="e60" target="n43" type="inclusion" source="n3">
+          <point x="70" y="-160"/>
+          <point x="260" y="-90"/>
+        </edge>
+        <edge id="e61" target="n43" type="inclusion" source="n44">
+          <point x="70" y="-90"/>
+          <point x="260" y="-90"/>
+        </edge>
+        <edge id="e62" target="n33" type="input" source="n45">
+          <point x="210" y="210"/>
+          <point x="340" y="207"/>
+        </edge>
+        <edge id="e63" target="n45" type="inclusion" source="n30">
+          <point x="60" y="210"/>
+          <point x="210" y="210"/>
         </edge>
         <edge id="e7" target="n5" type="input" source="n6">
           <point x="60" y="500"/>
@@ -5208,13 +5385,13 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n42" color="#fcfcfc" type="role">
           <geometry x="-1630" height="50" y="-2240" width="70"/>
-          <iri>https://cdm.ovh/taf/tafp5#hasTrain</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#hasTrain</iri>
           <label x="-1630" size="12" height="23" y="-2270" customSize="0" width="53"/>
         </node>
         <node id="n43" color="#fcfcfc" type="concept">
-          <geometry x="-1410" height="50" y="-2240" width="110"/>
+          <geometry x="-1400" height="50" y="-2240" width="110"/>
           <iri>https://cdm.ovh/taf/tafp5#Train</iri>
-          <label x="-1410" size="12" height="23" y="-2240" customSize="0" width="110"/>
+          <label x="-1400" size="12" height="23" y="-2240" customSize="0" width="110"/>
         </node>
         <node id="n45" color="#fcfcfc" type="domain-restriction">
           <geometry x="-1740" height="20" y="-1750" width="20"/>
@@ -5233,11 +5410,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <geometry x="-1630" height="50" y="-1650" width="70"/>
           <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant</iri>
           <label x="-1630" size="12" height="23" y="-1680" customSize="0" width="85"/>
-        </node>
-        <node id="n51" color="#fcfcfc" type="concept">
-          <geometry x="-1890" height="50" y="-2240" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#OperationalProcess</iri>
-          <label x="-1890" size="12" height="38" y="-2240" customSize="0" width="110"/>
         </node>
         <node id="n53" color="#fcfcfc" type="domain-restriction">
           <geometry x="-1740" height="20" y="-2130" width="20"/>
@@ -5267,6 +5439,11 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <geometry x="-1630" height="50" y="-1750" width="70"/>
           <iri>https://cdm.ovh/taf/tafp5#hasPlannedJourney</iri>
           <label x="-1630" size="12" height="23" y="-1780" customSize="0" width="113"/>
+        </node>
+        <node id="n59" color="#fcfcfc" type="concept">
+          <geometry x="-1890" height="50" y="-2240" width="110"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#Circulation</iri>
+          <label x="-1890" size="12" height="23" y="-2240" customSize="0" width="110"/>
         </node>
         <node id="n6" color="#fcfcfc" type="role">
           <geometry x="-1628" height="50" y="-1560" width="70"/>
@@ -5364,7 +5541,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </edge>
         <edge id="e47" target="n43" type="inclusion" source="n41">
           <point x="-1530" y="-2240"/>
-          <point x="-1410" y="-2240"/>
+          <point x="-1400" y="-2240"/>
         </edge>
         <edge id="e48" target="n0" type="inclusion" source="n45">
           <point x="-1740" y="-1750"/>
@@ -5377,18 +5554,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         <edge id="e53" target="n49" type="inclusion" source="n6">
           <point x="-1628" y="-1560"/>
           <point x="-1630" y="-1650"/>
-        </edge>
-        <edge id="e54" target="n51" type="inclusion" source="n0">
-          <point x="-1890" y="-1860"/>
-          <point x="-1890" y="-2240"/>
-        </edge>
-        <edge id="e55" target="n51" type="inclusion" source="n40">
-          <point x="-1740" y="-2240"/>
-          <point x="-1890" y="-2240"/>
-        </edge>
-        <edge id="e56" target="n53" type="inclusion" source="n51">
-          <point x="-1890" y="-2240"/>
-          <point x="-1740" y="-2130"/>
         </edge>
         <edge id="e57" target="n53" type="input" source="n54">
           <point x="-1630" y="-2160"/>
@@ -5421,6 +5586,18 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         <edge id="e66" target="n38" type="equivalence" source="n37">
           <point x="-2350" y="-1860"/>
           <point x="-2210" y="-1860"/>
+        </edge>
+        <edge id="e68" target="n59" type="inclusion" source="n0">
+          <point x="-1890" y="-1860"/>
+          <point x="-1890" y="-2240"/>
+        </edge>
+        <edge id="e69" target="n53" type="inclusion" source="n59">
+          <point x="-1890" y="-2240"/>
+          <point x="-1740" y="-2130"/>
+        </edge>
+        <edge id="e70" target="n59" type="inclusion" source="n40">
+          <point x="-1740" y="-2240"/>
+          <point x="-1890" y="-2240"/>
         </edge>
         <edge id="e8" target="n8" type="input" source="n6">
           <point x="-1628" y="-1560"/>
@@ -5562,13 +5739,13 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
       </diagram>
       <diagram name="03 - OperationalLocation" height="5000" width="5000">
         <node id="n0" color="#fcfcfc" type="concept">
-          <geometry x="40" height="50" y="-10" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#OperationalLocation</iri>
-          <label x="40" size="12" height="38" y="-10" customSize="0" width="110"/>
+          <geometry x="47" height="50" y="-10" width="125"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
+          <label x="47" size="12" height="23" y="-10" customSize="0" width="125"/>
         </node>
         <node id="n10" color="#fcfcfc" type="attribute">
           <geometry x="230" height="20" y="60" width="20"/>
-          <iri>https://cdm.ovh/taf/tafp5#locationName</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#locationName</iri>
           <label x="230" size="12" height="23" y="38" customSize="0" width="82"/>
         </node>
         <node id="n11" color="#fcfcfc" type="domain-restriction">
@@ -5586,12 +5763,8 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n15" color="#fcfcfc" type="role">
           <geometry x="-150" height="50" y="-10" width="70"/>
-          <iri>https://cdm.ovh/taf/tafp5#atOperationalLocation</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation</iri>
           <label x="-150" size="12" height="23" y="-40" customSize="0" width="126"/>
-        </node>
-        <node id="n16" color="#fcfcfc" type="domain-restriction">
-          <geometry x="-240" height="20" y="-10" width="20"/>
-          <label x="-240" size="12" height="23" y="-32" customSize="0" width="39">exists</label>
         </node>
         <node id="n17" color="#000000" type="range-restriction">
           <geometry x="-60" height="20" y="-10" width="20"/>
@@ -5603,31 +5776,18 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <label x="-150" size="12" height="23" y="-140" customSize="0" width="73"/>
         </node>
         <node id="n19" color="#fcfcfc" type="role-inverse">
-          <geometry x="-150" height="30" y="180" width="50"/>
-          <label x="-150" size="12" height="23" y="180" customSize="0" width="23"/>
+          <geometry x="-150" height="30" y="90" width="50"/>
+          <label x="-150" size="12" height="23" y="90" customSize="0" width="23"/>
         </node>
         <node id="n21" color="#fcfcfc" type="role">
-          <geometry x="-260" height="50" y="180" width="70"/>
-          <iri>https://cdm.ovh/taf/tafp5#isOperationalLocationOf</iri>
-          <label x="-260" size="12" height="23" y="150" customSize="0" width="137"/>
+          <geometry x="-260" height="50" y="90" width="70"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#isOperationalLocationOf</iri>
+          <label x="-260" size="12" height="23" y="60" customSize="0" width="137"/>
         </node>
         <node id="n22" color="#c2b078" type="role">
-          <geometry x="-260" height="50" y="80" width="70"/>
+          <geometry x="-260" height="50" y="-110" width="70"/>
           <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf</iri>
-          <label x="-260" size="12" height="23" y="50" customSize="0" width="75"/>
-        </node>
-        <node id="n23" color="#fcfcfc" type="concept">
-          <geometry x="-440" height="50" y="20" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#Track</iri>
-          <label x="-440" size="12" height="23" y="20" customSize="0" width="110"/>
-        </node>
-        <node id="n24" color="#fcfcfc" type="concept">
-          <geometry x="-440" height="50" y="-50" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#Facility</iri>
-          <label x="-440" size="12" height="23" y="-50" customSize="0" width="110"/>
-        </node>
-        <node id="n25" color="#000000" type="disjoint-union">
-          <geometry x="-310" height="30" y="-10" width="50"/>
+          <label x="-260" size="12" height="23" y="-140" customSize="0" width="75"/>
         </node>
         <node id="n26" color="#fcfcfc" type="value-domain">
           <geometry x="410" height="40" y="-10" width="90"/>
@@ -5641,12 +5801,12 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n28" color="#fcfcfc" type="attribute">
           <geometry x="230" height="20" y="-80" width="20"/>
-          <iri>https://cdm.ovh/taf/tafp5#hasPrimaryCode</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#hasPrimaryCode</iri>
           <label x="230" size="12" height="23" y="-102" customSize="0" width="96"/>
         </node>
         <node id="n29" color="#fcfcfc" type="attribute">
           <geometry x="230" height="20" y="-10" width="20"/>
-          <iri>https://cdm.ovh/taf/tafp5#hasSubsidiaryCode</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#hasSubsidiaryCode</iri>
           <label x="230" size="12" height="23" y="-32" customSize="0" width="110"/>
         </node>
         <node id="n30" color="#000000" type="range-restriction">
@@ -5671,7 +5831,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </edge>
         <edge id="e11" target="n0" type="inclusion" source="n11">
           <point x="150" y="60"/>
-          <point x="40" y="-10"/>
+          <point x="47" y="-10"/>
         </edge>
         <edge id="e12" target="n12" type="input" source="n10">
           <point x="230" y="60"/>
@@ -5683,15 +5843,11 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </edge>
         <edge id="e14" target="n0" type="inclusion" source="n17">
           <point x="-60" y="-10"/>
-          <point x="40" y="-10"/>
+          <point x="47" y="-10"/>
         </edge>
         <edge id="e16" target="n17" type="input" source="n15">
           <point x="-150" y="-10"/>
           <point x="-60" y="-10"/>
-        </edge>
-        <edge id="e17" target="n16" type="input" source="n15">
-          <point x="-150" y="-10"/>
-          <point x="-240" y="-10"/>
         </edge>
         <edge id="e18" target="n18" type="inclusion" source="n15">
           <point x="-150" y="-10"/>
@@ -5699,31 +5855,15 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </edge>
         <edge id="e2" target="n0" type="inclusion" source="n7">
           <point x="150" y="-80"/>
-          <point x="40" y="-10"/>
+          <point x="47" y="-10"/>
         </edge>
         <edge id="e20" target="n19" type="input" source="n15">
           <point x="-150" y="-10"/>
-          <point x="-150" y="180"/>
-        </edge>
-        <edge id="e24" target="n21" type="equivalence" source="n19">
-          <point x="-150" y="180"/>
-          <point x="-260" y="180"/>
+          <point x="-150" y="90"/>
         </edge>
         <edge id="e25" target="n22" type="inclusion" source="n21">
-          <point x="-260" y="180"/>
-          <point x="-260" y="80"/>
-        </edge>
-        <edge id="e26" target="n25" type="input" source="n24">
-          <point x="-440" y="-50"/>
-          <point x="-310" y="-10"/>
-        </edge>
-        <edge id="e27" target="n25" type="input" source="n23">
-          <point x="-440" y="20"/>
-          <point x="-310" y="-10"/>
-        </edge>
-        <edge id="e28" target="n25" type="inclusion" source="n16">
-          <point x="-240" y="-10"/>
-          <point x="-310" y="-10"/>
+          <point x="-260" y="90"/>
+          <point x="-260" y="-110"/>
         </edge>
         <edge id="e30" target="n27" type="inclusion" source="n5">
           <point x="320" y="-80"/>
@@ -5731,7 +5871,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </edge>
         <edge id="e31" target="n0" type="inclusion" source="n31">
           <point x="150" y="-10"/>
-          <point x="40" y="-10"/>
+          <point x="47" y="-10"/>
         </edge>
         <edge id="e32" target="n26" type="inclusion" source="n30">
           <point x="320" y="-10"/>
@@ -5752,6 +5892,10 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         <edge id="e36" target="n31" type="input" source="n29">
           <point x="230" y="-10"/>
           <point x="150" y="-10"/>
+        </edge>
+        <edge id="e38" target="n19" type="equivalence" source="n21">
+          <point x="-260" y="90"/>
+          <point x="-150" y="90"/>
         </edge>
       </diagram>
       <diagram name="04 - Train" height="5000" width="5000">
@@ -6078,9 +6222,9 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
       <diagram name="06a - Cargo" height="5000" width="5000"/>
       <diagram name="07 - Track" height="5000" width="5000">
         <node id="n0" color="#fcfcfc" type="concept">
-          <geometry x="110" height="50" y="100" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#Track</iri>
-          <label x="110" size="12" height="23" y="100" customSize="0" width="110"/>
+          <geometry x="110" height="185" y="167" width="110"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#Track</iri>
+          <label x="110" size="12" height="23" y="167" customSize="0" width="110"/>
         </node>
         <node id="n1" color="#fcfcfc" type="attribute">
           <geometry x="320" height="20" y="100" width="20"/>
@@ -6100,13 +6244,32 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <iri>http://www.w3.org/2001/XMLSchema#string</iri>
           <label x="520" size="12" height="23" y="100" customSize="0" width="90"/>
         </node>
+        <node id="n5" color="#f0e50c" type="concept">
+          <geometry x="110" height="50" y="-30" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetEntity</iri>
+          <label x="110" size="12" height="23" y="-30" customSize="0" width="110"/>
+        </node>
+        <node id="n6" color="#fcfcfc" type="domain-restriction">
+          <geometry x="220" height="20" y="170" width="20"/>
+          <label x="220" size="12" height="23" y="148" customSize="0" width="39">forall</label>
+        </node>
+        <node id="n7" color="#fcfcfc" type="concept">
+          <geometry x="327" height="50" y="240" width="125"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
+          <label x="327" size="12" height="23" y="240" customSize="0" width="125"/>
+        </node>
+        <node id="n8" color="#fcfcfc" type="role">
+          <geometry x="320" height="50" y="170" width="70"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation</iri>
+          <label x="320" size="12" height="23" y="140" customSize="0" width="126"/>
+        </node>
         <edge id="e0" target="n4" type="inclusion" source="n3">
           <point x="420" y="100"/>
           <point x="520" y="100"/>
         </edge>
         <edge id="e1" target="n0" type="inclusion" source="n2">
           <point x="220" y="100"/>
-          <point x="110" y="100"/>
+          <point x="164" y="100"/>
         </edge>
         <edge id="e2" target="n3" type="input" source="n1">
           <point x="320" y="100"/>
@@ -6116,11 +6279,27 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <point x="320" y="100"/>
           <point x="220" y="100"/>
         </edge>
+        <edge id="e4" target="n5" type="inclusion" source="n0">
+          <point x="110" y="167"/>
+          <point x="110" y="-30"/>
+        </edge>
+        <edge id="e5" target="n6" type="inclusion" source="n0">
+          <point x="164" y="170"/>
+          <point x="220" y="170"/>
+        </edge>
+        <edge id="e6" target="n6" type="input" source="n8">
+          <point x="320" y="170"/>
+          <point x="220" y="170"/>
+        </edge>
+        <edge id="e7" target="n6" type="input" source="n7">
+          <point x="327" y="240"/>
+          <point x="220" y="170"/>
+        </edge>
       </diagram>
       <diagram name="08 - Facility" height="5000" width="5000">
         <node id="n0" color="#fcfcfc" type="concept">
           <geometry x="-120" height="515" y="100" width="110"/>
-          <iri>https://cdm.ovh/taf/tafp5#Facility</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#Facility</iri>
           <label x="-120" size="12" height="23" y="100" customSize="0" width="110"/>
         </node>
         <node id="n10" color="#000000" type="range-restriction">
@@ -6172,6 +6351,25 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n34" color="#fcfcfc" inputs="e78,e79" type="property-assertion">
           <geometry x="520" height="30" y="160" width="52"/>
+        </node>
+        <node id="n35" color="#f0e50c" type="concept">
+          <geometry x="-120" height="50" y="-230" width="110"/>
+          <iri>https://cdm.ovh/rsm/network/netw#NetEntity</iri>
+          <label x="-120" size="12" height="23" y="-230" customSize="0" width="110"/>
+        </node>
+        <node id="n36" color="#fcfcfc" type="role">
+          <geometry x="120" height="50" y="250" width="70"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation</iri>
+          <label x="120" size="12" height="23" y="220" customSize="0" width="126"/>
+        </node>
+        <node id="n37" color="#fcfcfc" type="domain-restriction">
+          <geometry x="20" height="20" y="250" width="20"/>
+          <label x="20" size="12" height="23" y="228" customSize="0" width="39">forall</label>
+        </node>
+        <node id="n38" color="#fcfcfc" type="concept">
+          <geometry x="120" height="50" y="330" width="135"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
+          <label x="120" size="12" height="23" y="330" customSize="0" width="135"/>
         </node>
         <node id="n4" color="#c2b078" type="role">
           <geometry x="120" height="50" y="10" width="70"/>
@@ -6275,6 +6473,22 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         <edge id="e8" target="n10" type="input" source="n8">
           <point x="120" y="-110"/>
           <point x="220" y="-110"/>
+        </edge>
+        <edge id="e80" target="n35" type="inclusion" source="n0">
+          <point x="-120" y="100"/>
+          <point x="-120" y="-230"/>
+        </edge>
+        <edge id="e81" target="n37" type="inclusion" source="n0">
+          <point x="-66" y="250"/>
+          <point x="20" y="250"/>
+        </edge>
+        <edge id="e82" target="n37" type="input" source="n36">
+          <point x="120" y="250"/>
+          <point x="20" y="250"/>
+        </edge>
+        <edge id="e83" target="n37" type="input" source="n38">
+          <point x="120" y="330"/>
+          <point x="20" y="250"/>
         </edge>
         <edge id="e9" target="n9" type="input" source="n8">
           <point x="120" y="-110"/>
@@ -6945,12 +7159,12 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n21" color="#fcfcfc" type="concept">
           <geometry x="790" height="50" y="-140" width="165"/>
-          <iri>https://cdm.ovh/taf/tafp5#OperationalLocation</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
           <label x="790" size="12" height="23" y="-140" customSize="0" width="165"/>
         </node>
         <node id="n22" color="#fcfcfc" type="concept">
           <geometry x="810" height="50" y="60" width="165"/>
-          <iri>https://cdm.ovh/taf/tafp5#OperationalLocation</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
           <label x="810" size="12" height="23" y="60" customSize="0" width="165"/>
         </node>
         <node id="n26" color="#f0e50c" type="concept">
@@ -7070,7 +7284,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n55" color="#fcfcfc" type="concept">
           <geometry x="670" height="50" y="860" width="135"/>
-          <iri>https://cdm.ovh/taf/tafp5#OperationalLocation</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
           <label x="670" size="12" height="23" y="860" customSize="0" width="135"/>
         </node>
         <node id="n56" color="#fcfcfc" type="role">
@@ -7798,21 +8012,13 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node id="n46" color="#fcfcfc" type="role">
           <geometry x="300" height="50" y="470" width="70"/>
-          <iri>https://cdm.ovh/taf/tafp5#atOperationalLocation</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation</iri>
           <label x="300" size="12" height="23" y="440" customSize="0" width="126"/>
         </node>
-        <node id="n47" color="#fcfcfc" type="domain-restriction">
-          <geometry x="210" height="20" y="470" width="20"/>
-          <label x="210" size="12" height="23" y="448" customSize="0" width="39">exists</label>
-        </node>
-        <node id="n48" color="#000000" type="range-restriction">
-          <geometry x="400" height="20" y="470" width="20"/>
-          <label x="400" size="12" height="23" y="448" customSize="0" width="39">exists</label>
-        </node>
         <node id="n49" color="#fcfcfc" type="concept">
-          <geometry x="511" height="50" y="470" width="117"/>
-          <iri>https://cdm.ovh/taf/tafp5#OperationalLocation</iri>
-          <label x="511" size="12" height="23" y="470" customSize="0" width="117"/>
+          <geometry x="300" height="50" y="540" width="117"/>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation</iri>
+          <label x="300" size="12" height="23" y="540" customSize="0" width="117"/>
         </node>
         <node id="n58" color="#fcfcfc" type="concept">
           <geometry x="-20" height="50" y="300" width="175"/>
@@ -7839,47 +8045,51 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <label x="260" size="12" height="23" y="180" customSize="0" width="85"/>
         </node>
         <node id="n69" color="#fcfcfc" type="concept">
-          <geometry x="87" height="50" y="540" width="125"/>
+          <geometry x="87" height="50" y="630" width="125"/>
           <iri>https://cdm.ovh/taf/tafp5#TrainCustomsState</iri>
-          <label x="87" size="12" height="23" y="540" customSize="0" width="125"/>
+          <label x="87" size="12" height="23" y="630" customSize="0" width="125"/>
         </node>
         <node id="n70" color="#fcfcfc" type="concept">
-          <geometry x="510" height="50" y="540" width="110"/>
+          <geometry x="510" height="50" y="630" width="110"/>
           <iri>https://cdm.ovh/taf/tafp5#CustomsStatus</iri>
-          <label x="510" size="12" height="23" y="540" customSize="0" width="110"/>
+          <label x="510" size="12" height="23" y="630" customSize="0" width="110"/>
         </node>
         <node id="n71" color="#fcfcfc" type="individual">
-          <geometry x="380" height="60" y="620" width="60"/>
+          <geometry x="380" height="60" y="710" width="60"/>
           <iri>https://cdm.ovh/taf/tafp5#Pending</iri>
-          <label x="380" size="12" height="23" y="620" customSize="0" width="60"/>
+          <label x="380" size="12" height="23" y="710" customSize="0" width="60"/>
         </node>
         <node id="n73" color="#fcfcfc" type="individual">
-          <geometry x="470" height="60" y="620" width="70"/>
+          <geometry x="470" height="60" y="710" width="70"/>
           <iri>https://cdm.ovh/taf/tafp5#Inspected</iri>
-          <label x="470" size="12" height="23" y="620" customSize="0" width="70"/>
+          <label x="470" size="12" height="23" y="710" customSize="0" width="70"/>
         </node>
         <node id="n74" color="#fcfcfc" type="individual">
-          <geometry x="560" height="60" y="620" width="60"/>
+          <geometry x="560" height="60" y="710" width="60"/>
           <iri>https://cdm.ovh/taf/tafp5#Cleared</iri>
-          <label x="560" size="12" height="23" y="620" customSize="0" width="60"/>
+          <label x="560" size="12" height="23" y="710" customSize="0" width="60"/>
         </node>
         <node id="n75" color="#fcfcfc" type="role">
-          <geometry x="300" height="50" y="540" width="70"/>
+          <geometry x="300" height="50" y="630" width="70"/>
           <iri>https://cdm.ovh/taf/tafp5#hasCustomsStatus</iri>
-          <label x="300" size="12" height="23" y="510" customSize="0" width="109"/>
+          <label x="300" size="12" height="23" y="600" customSize="0" width="109"/>
         </node>
         <node id="n76" color="#fcfcfc" type="domain-restriction">
-          <geometry x="210" height="20" y="540" width="20"/>
-          <label x="210" size="12" height="23" y="518" customSize="0" width="39">exists</label>
+          <geometry x="210" height="20" y="630" width="20"/>
+          <label x="210" size="12" height="23" y="608" customSize="0" width="39">exists</label>
         </node>
         <node id="n77" color="#000000" type="range-restriction">
-          <geometry x="400" height="20" y="540" width="20"/>
-          <label x="400" size="12" height="23" y="518" customSize="0" width="39">exists</label>
+          <geometry x="400" height="20" y="630" width="20"/>
+          <label x="400" size="12" height="23" y="608" customSize="0" width="39">exists</label>
         </node>
         <node id="n78" color="#fcfcfc" type="individual">
-          <geometry x="640" height="60" y="620" width="60"/>
+          <geometry x="640" height="60" y="710" width="60"/>
           <iri>https://cdm.ovh/taf/tafp5#PreCleared</iri>
-          <label x="640" size="12" height="38" y="620" customSize="0" width="60"/>
+          <label x="640" size="12" height="38" y="710" customSize="0" width="60"/>
+        </node>
+        <node id="n79" color="#fcfcfc" type="domain-restriction">
+          <geometry x="210" height="20" y="470" width="20"/>
+          <label x="210" size="12" height="23" y="448" customSize="0" width="39">forall</label>
         </node>
         <edge id="e27" target="n30" type="inclusion" source="n29">
           <point x="400" y="400"/>
@@ -7892,18 +8102,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         <edge id="e30" target="n28" type="input" source="n27">
           <point x="300" y="400"/>
           <point x="210" y="400"/>
-        </edge>
-        <edge id="e46" target="n49" type="inclusion" source="n48">
-          <point x="400" y="470"/>
-          <point x="511" y="470"/>
-        </edge>
-        <edge id="e47" target="n48" type="input" source="n46">
-          <point x="300" y="470"/>
-          <point x="400" y="470"/>
-        </edge>
-        <edge id="e48" target="n47" type="input" source="n46">
-          <point x="300" y="470"/>
-          <point x="210" y="470"/>
         </edge>
         <edge id="e66" target="n60" type="inclusion" source="n58">
           <point x="-20" y="300"/>
@@ -7922,36 +8120,36 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <point x="130" y="300"/>
         </edge>
         <edge id="e77" target="n70" type="membership" source="n71">
-          <point x="380" y="620"/>
-          <point x="510" y="540"/>
+          <point x="380" y="710"/>
+          <point x="510" y="630"/>
         </edge>
         <edge id="e78" target="n70" type="membership" source="n73">
-          <point x="470" y="620"/>
-          <point x="510" y="540"/>
+          <point x="470" y="710"/>
+          <point x="510" y="630"/>
         </edge>
         <edge id="e79" target="n70" type="membership" source="n74">
-          <point x="560" y="620"/>
-          <point x="510" y="540"/>
+          <point x="560" y="710"/>
+          <point x="510" y="630"/>
         </edge>
         <edge id="e80" target="n77" type="input" source="n75">
-          <point x="300" y="540"/>
-          <point x="400" y="540"/>
+          <point x="300" y="630"/>
+          <point x="400" y="630"/>
         </edge>
         <edge id="e81" target="n76" type="input" source="n75">
-          <point x="300" y="540"/>
-          <point x="210" y="540"/>
+          <point x="300" y="630"/>
+          <point x="210" y="630"/>
         </edge>
         <edge id="e82" target="n69" type="inclusion" source="n76">
-          <point x="210" y="540"/>
-          <point x="87" y="540"/>
+          <point x="210" y="630"/>
+          <point x="87" y="630"/>
         </edge>
         <edge id="e83" target="n70" type="inclusion" source="n77">
-          <point x="400" y="540"/>
-          <point x="510" y="540"/>
+          <point x="400" y="630"/>
+          <point x="510" y="630"/>
         </edge>
         <edge id="e84" target="n70" type="membership" source="n78">
-          <point x="640" y="620"/>
-          <point x="510" y="540"/>
+          <point x="640" y="710"/>
+          <point x="510" y="630"/>
         </edge>
         <edge id="e85" target="n58" type="inclusion" source="n39">
           <point x="86" y="400"/>
@@ -7964,17 +8162,25 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <point x="-20" y="300"/>
         </edge>
         <edge id="e87" target="n58" type="inclusion" source="n69">
-          <point x="87" y="540"/>
-          <point x="-20" y="540"/>
+          <point x="87" y="630"/>
+          <point x="-20" y="630"/>
           <point x="-20" y="300"/>
         </edge>
         <edge id="e88" target="n39" type="inclusion" source="n28">
           <point x="210" y="400"/>
           <point x="86" y="400"/>
         </edge>
-        <edge id="e89" target="n45" type="inclusion" source="n47">
-          <point x="210" y="470"/>
+        <edge id="e90" target="n79" type="inclusion" source="n45">
           <point x="85" y="470"/>
+          <point x="210" y="470"/>
+        </edge>
+        <edge id="e92" target="n79" type="input" source="n46">
+          <point x="300" y="470"/>
+          <point x="210" y="470"/>
+        </edge>
+        <edge id="e93" target="n79" type="input" source="n49">
+          <point x="300" y="540"/>
+          <point x="210" y="470"/>
         </edge>
       </diagram>
       <diagram name="13b - Train state" height="5000" width="5000">
