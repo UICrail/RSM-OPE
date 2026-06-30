@@ -279,14 +279,339 @@ This ontology refers to the DUL upper ontology (DOLCE+DnS Ultralite) which is im
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#atTime -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#atTime">
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalTime"/>
+        <rdfs:label xml:lang="en">at time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#concernsTrain -->
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#concernsTrain">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Circulation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#Train"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Train"/>
         <rdfs:comment xml:lang="en">refers to the train (rolling stock, supplies, loads) that participates in the operational process. Normally a single one.</rdfs:comment>
         <rdfs:label xml:lang="en">concerns train</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasArrivalTime -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasArrivalTime">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant"/>
+        <rdfs:label xml:lang="en">has arrival time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasBeginning -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasBeginning">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasBeginning"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">has beginning</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasComposition -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasComposition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainCompositionState"/>
+        <rdfs:range rdf:resource="http://cdm.ovh/rsm/rolling_stock/typology/typology#RollingStock"/>
+        <rdfs:label xml:lang="en">has composition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasCustomsStatus -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasCustomsStatus">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainCustomsState"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus"/>
+        <rdfs:label xml:lang="en">has customs status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasDepartureTime -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasDepartureTime">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant"/>
+        <rdfs:comment xml:lang="en">May have multiple values (e.g. planned, revised, forecast, actual...), hence NOT a functional property</rdfs:comment>
+        <rdfs:label xml:lang="en">has departure time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasDestination -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasDestination">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
+        <rdfs:label xml:lang="en">has destination</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasEnd -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasEnd"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">has end</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasFacilityFunction -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasFacilityFunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Facility"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunction"/>
+        <rdfs:label xml:lang="en">has facility function</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasIM -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasIM">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationsStakeholder"/>
+        <rdfs:label xml:lang="en">has IM</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasImageContent -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasImageContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Image"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ContentLocation"/>
+        <rdfs:label xml:lang="en">has image content</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasJourney -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasJourney">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainJourneyState"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Journey"/>
+        <rdfs:comment xml:lang="en">not a functional property, as it can be expressed w.r.t. the planned journey or the executed journey (if available). User feedback welcome.</rdfs:comment>
+        <rdfs:label>has journey</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasJourneySchedule -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasJourneySchedule">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Journey"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:comment xml:lang="en">Note: it may be that the same path or planned journey has multiple schedules (variants), not further characterized here, so we did not make this property functional.</rdfs:comment>
+        <rdfs:label>has journey schedule</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasOTN -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasOTN">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OTN"/>
+        <rdfs:comment xml:lang="en">The same train run can have different Operational Train Numbers in its course, depending on the operator or network over which it is run.</rdfs:comment>
+        <rdfs:label xml:lang="en">has OTN</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/hasOperationalTrainNumberIdentifier</rdfs:seeAlso>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasOperationalInstant -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasOperationalInstant">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant"/>
+        <rdfs:label xml:lang="en">has operational instant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasOperationalInterval -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasOperationalInterval">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInterval"/>
+        <rdfs:label xml:lang="en">has operational interval</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasOperationalLocation -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasOperationalLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#StaticSection"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
+        <rdfs:label xml:lang="en">has operational location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasOrigin -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasOrigin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
+        <rdfs:label xml:lang="en">has origin</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasPayload -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasPayload">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:label xml:lang="en">has payload</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasPlannedJourney -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasPlannedJourney">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath"/>
+        <rdfs:label xml:lang="en">has planned journey</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasRU -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasRU">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationsStakeholder"/>
+        <rdfs:comment xml:lang="en">RU responsible for the journey section.
+The Lead RU (responsible for the train run also for the commercial aspects) is defined at train run level.</rdfs:comment>
+        <rdfs:label xml:lang="en">has RU</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasReferenceObject -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasReferenceObject">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">following the data requirements, this property qualifies the message. However this may not be optimal, since Operational States &quot;know&quot; about the objects concerned, via dul:hasSetting or dul:hasParticipant.</rdfs:comment>
+        <rdfs:label>has reference object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasResult -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasResult">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingState"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult"/>
+        <rdfs:label xml:lang="en">has result</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasSchedulePart -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasSchedulePart">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#inJourneySchedule"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#SchedulePart"/>
+        <rdfs:comment xml:lang="en">Inverse functional property.</rdfs:comment>
+        <rdfs:label>has schedule part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasServiceType -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasServiceType">
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ServiceType"/>
+        <rdfs:label xml:lang="en">has service type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasSubProcess -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasSubProcess">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+        <rdfs:label xml:lang="en">has sub process</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasTemporalRole -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasTemporalRole">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole"/>
+        <rdfs:label xml:lang="en">has temporal role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasTrainRunState -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasTrainRunState">
+        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#isStateOfTrainRun"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:label>has train run state</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasTrainState -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasTrainState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Train"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:label xml:lang="en">has train state</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#inJourneySchedule -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#inJourneySchedule">
+        <rdfs:label xml:lang="en">in journey schedule</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -301,192 +626,136 @@ This ontology refers to the DUL upper ontology (DOLCE+DnS Ultralite) which is im
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#atTime -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#isStateOfTrainRun -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#atTime">
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationalTime"/>
-        <rdfs:label xml:lang="en">at time</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasArrivalTime -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasArrivalTime">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInstant"/>
-        <rdfs:label xml:lang="en">has arrival time</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasBeginning -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasBeginning">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasBeginning"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#isStateOfTrainRun">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:label xml:lang="en">has beginning</rdfs:label>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRunState"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+        <rdfs:label>is state of train run</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#hasComposition -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#nextDescriptionVersion -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasComposition">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#nextDescriptionVersion">
+        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#previousDescriptionVersion"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainCompositionState"/>
-        <rdfs:range rdf:resource="http://cdm.ovh/rsm/rolling_stock/typology/typology#RollingStock"/>
-        <rdfs:label xml:lang="en">has composition</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasCustomsStatus -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasCustomsStatus">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainCustomsState"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#CustomsStatus"/>
-        <rdfs:label xml:lang="en">has customs status</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasDepartureTime -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasDepartureTime">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInstant"/>
-        <rdfs:comment xml:lang="en">May have multiple values (e.g. planned, revised, forecast, actual...), hence NOT a functional property</rdfs:comment>
-        <rdfs:label xml:lang="en">has departure time</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasDestination -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasDestination">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
-        <rdfs:label xml:lang="en">has destination</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasEnd -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasEnd">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasEnd"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:label xml:lang="en">has end</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasFacilityFunction -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasFacilityFunction">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Facility"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction"/>
-        <rdfs:label xml:lang="en">has facility function</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasIM -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasIM">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationsStakeholder"/>
-        <rdfs:label xml:lang="en">has IM</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasImageContent -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasImageContent">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Image"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#ContentLocation"/>
-        <rdfs:label xml:lang="en">has image content</rdfs:label>
+        <rdfs:label>next description version</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#hasJourney -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#nextSection -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasJourney">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainJourneyState"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#Journey"/>
-        <rdfs:comment xml:lang="en">not a functional property, as it can be expressed w.r.t. the planned journey or the executed journey (if available). User feedback welcome.</rdfs:comment>
-        <rdfs:label>has journey</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasJourneySchedule -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasJourneySchedule">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Journey"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:comment xml:lang="en">Note: it may be that the same path or planned journey has multiple schedules (variants), not further characterized here, so we did not make this property functional.</rdfs:comment>
-        <rdfs:label>has journey schedule</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasOTN -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasOTN">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainRun"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OTN"/>
-        <rdfs:comment xml:lang="en">The same train run can have different Operational Train Numbers in its course, depending on the operator or network over which it is run.</rdfs:comment>
-        <rdfs:label xml:lang="en">has OTN</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/hasOperationalTrainNumberIdentifier</rdfs:seeAlso>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasOperationalInstant -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasOperationalInstant">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInstant"/>
-        <rdfs:label xml:lang="en">has operational instant</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasOperationalInterval -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasOperationalInterval">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInterval"/>
-        <rdfs:label xml:lang="en">has operational interval</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasOperationalLocation -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasOperationalLocation">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#nextSection">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#StaticSection"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
-        <rdfs:label xml:lang="en">has operational location</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySection"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySection"/>
+        <rdfs:label xml:lang="en">next section</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#hasOrigin -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#playsFacilityRole -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasOrigin">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#playsFacilityRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#playsRole"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Facility"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunction"/>
+        <rdfs:label xml:lang="en">plays facility role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#playsOperationalRole -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#playsOperationalRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#playsRole"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationsStakeholder"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalRole"/>
+        <rdfs:comment xml:lang="en">property listing the possible roles, not those actually played on a particular train run</rdfs:comment>
+        <rdfs:label xml:lang="en">plays operational role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#previousDescriptionVersion -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#previousDescriptionVersion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasRevisionOf"/>
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#revisesDescriptionVersion"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
-        <rdfs:label xml:lang="en">has origin</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription"/>
+        <rdfs:comment xml:lang="en">A transitive property linking a new description to the (sole) previous one it revises. &quot;Supersedes&quot; would be a ternary relation, the value of which could be deducted from the &quot;effective from&quot; datetimes, and the datetime of the query: not conceptualized in this ontology.</rdfs:comment>
+        <rdfs:label>previous description version</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#previousSection -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#previousSection">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySection"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySection"/>
+        <rdfs:label xml:lang="en">previous section</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#realizesPlannedJourneyOrPath -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#realizesPlannedJourneyOrPath">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ExecutedJourney"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath"/>
+        <rdfs:comment xml:lang="en">Planned journey (the object) may be a path, a planned journey (in the strict sense) or a forecast journey (an updated planned journey)</rdfs:comment>
+        <rdfs:label xml:lang="en">realizesPlannedJourneyOrPath</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#referenceOTN -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#referenceOTN">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ReferenceOTN"/>
+        <rdfs:label>has reference OTN</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#revisesDescriptionVersion -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#revisesDescriptionVersion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:comment xml:lang="en">Links a description version to all previous description versions (therefore not a functional property). Transitive closure of previousDescriptionVersion.</rdfs:comment>
+        <rdfs:label>revises description version</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#trainLeadRU -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#trainLeadRU">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationsStakeholder"/>
+        <rdfs:comment xml:lang="en">Points to the &quot;lead RU&quot; for the entire train</rdfs:comment>
+        <rdfs:label xml:lang="en">train lead RU</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/TrainOperatingRU</rdfs:seeAlso>
     </owl:ObjectProperty>
     
 
@@ -495,275 +764,6 @@ This ontology refers to the DUL upper ontology (DOLCE+DnS Ultralite) which is im
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasParticipant">
         <rdfs:label xml:lang="en">has participant</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasPayload -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasPayload">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TransportCollaborationMessage"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:label xml:lang="en">has payload</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasPlannedJourney -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasPlannedJourney">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainRun"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath"/>
-        <rdfs:label xml:lang="en">has planned journey</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasRU -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasRU">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationsStakeholder"/>
-        <rdfs:comment xml:lang="en">RU responsible for the journey section.
-The Lead RU (responsible for the train run also for the commercial aspects) is defined at train run level.</rdfs:comment>
-        <rdfs:label xml:lang="en">has RU</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasReferenceObject -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasReferenceObject">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TransportCollaborationMessage"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#ITU"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#TrainRun"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:comment xml:lang="en">following the data requirements, this property qualifies the message. However this may not be optimal, since Operational States &quot;know&quot; about the objects concerned, via dul:hasSetting or dul:hasParticipant.</rdfs:comment>
-        <rdfs:label>has reference object</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasResult -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasResult">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainServicingState"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#TrainServicingResult"/>
-        <rdfs:label xml:lang="en">has result</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasSchedulePart -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasSchedulePart">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
-        <owl:inverseOf rdf:resource="https://cdm.ovh/taf/tafp5#inJourneySchedule"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#SchedulePart"/>
-        <rdfs:comment xml:lang="en">Inverse functional property.</rdfs:comment>
-        <rdfs:label>has schedule part</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasServiceType -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasServiceType">
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#ServiceType"/>
-        <rdfs:label xml:lang="en">has service type</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasSubProcess -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasSubProcess">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
-        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
-        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
-        <rdfs:label xml:lang="en">has sub process</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasTemporalRole -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasTemporalRole">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#TemporalRole"/>
-        <rdfs:label xml:lang="en">has temporal role</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasTrainRunState -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasTrainRunState">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/taf/tafp5#isStateOfTrainRun"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:label>has train run state</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasTrainState -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasTrainState">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Train"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:label xml:lang="en">has train state</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#inJourneySchedule -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#inJourneySchedule">
-        <rdfs:label xml:lang="en">in journey schedule</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#isStateOfTrainRun -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#isStateOfTrainRun">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainRunState"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#TrainRun"/>
-        <rdfs:label>is state of train run</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#nextDescriptionVersion -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#nextDescriptionVersion">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/taf/tafp5#previousDescriptionVersion"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:label>next description version</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#nextSection -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#nextSection">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySection"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#JourneySection"/>
-        <rdfs:label xml:lang="en">next section</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#playsFacilityRole -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#playsFacilityRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#playsRole"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Facility"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction"/>
-        <rdfs:label xml:lang="en">plays facility role</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#playsOperationalRole -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#playsOperationalRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#playsRole"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#OperationsStakeholder"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationalRole"/>
-        <rdfs:comment xml:lang="en">property listing the possible roles, not those actually played on a particular train run</rdfs:comment>
-        <rdfs:label xml:lang="en">plays operational role</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#previousDescriptionVersion -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#previousDescriptionVersion">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasRevisionOf"/>
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/taf/tafp5#revisesDescriptionVersion"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#VersionedDescription"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#VersionedDescription"/>
-        <rdfs:comment xml:lang="en">A transitive property linking a new description to the (sole) previous one it revises. &quot;Supersedes&quot; would be a ternary relation, the value of which could be deducted from the &quot;effective from&quot; datetimes, and the datetime of the query: not conceptualized in this ontology.</rdfs:comment>
-        <rdfs:label>previous description version</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#previousSection -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#previousSection">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySection"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#JourneySection"/>
-        <rdfs:label xml:lang="en">previous section</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#realizesPlannedJourneyOrPath -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#realizesPlannedJourneyOrPath">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#ExecutedJourney"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath"/>
-        <rdfs:comment xml:lang="en">Planned journey (the object) may be a path, a planned journey (in the strict sense) or a forecast journey (an updated planned journey)</rdfs:comment>
-        <rdfs:label xml:lang="en">realizesPlannedJourneyOrPath</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#referenceOTN -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#referenceOTN">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainRun"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#ReferenceOTN"/>
-        <rdfs:label>has reference OTN</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#revisesDescriptionVersion -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#revisesDescriptionVersion">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:comment xml:lang="en">Links a description version to all previous description versions (therefore not a functional property). Transitive closure of previousDescriptionVersion.</rdfs:comment>
-        <rdfs:label>revises description version</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#trainLeadRU -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#trainLeadRU">
-        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainRun"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OperationsStakeholder"/>
-        <rdfs:comment xml:lang="en">Points to the &quot;lead RU&quot; for the entire train</rdfs:comment>
-        <rdfs:label xml:lang="en">train lead RU</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/TrainOperatingRU</rdfs:seeAlso>
     </owl:ObjectProperty>
     
 
@@ -814,6 +814,182 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#asPNG -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#asPNG">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ContentLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#base64Binary"/>
+        <rdfs:label xml:lang="en">as PNG</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#asWKT -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#asWKT">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainGPSPositionState"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">single string, using WKT serialization</rdfs:comment>
+        <rdfs:label>as wkt</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#compositionValidationPassed -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#compositionValidationPassed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainCompositionState"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>composition validation passed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#createdAt -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#createdAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment xml:lang="en">like other time properties, it is not made functional, to allow multiple time representations (time zones).</rdfs:comment>
+        <rdfs:label xml:lang="en">created at</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#effectiveFrom -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#effectiveFrom">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:label xml:lang="en">effective from</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#effectiveUntil -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#effectiveUntil">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment xml:lang="en">Value can be computed by looking up updates and their &quot;effective from&quot; datetimes, supposing the newer versions invalidate earlier ones at the time they become effective. The ontology does not go that far (it would be a matter of SWRL rules).</rdfs:comment>
+        <rdfs:label xml:lang="en">effective until</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasBICCcode -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasBICCcode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">BIC code according to ISO 6346 (4 letters, 6 numeric digits and 1 check digit)</rdfs:comment>
+        <rdfs:label>has BIC code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasComment -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasComment">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Message"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has comment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasDesignation -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasDesignation">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Track"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Designation: to be discussed. Probably not unique. Can have short or long forms (e.g. &quot;Track 5&quot;  in the context of some yard; &quot;Alnabru yard track 5&quot; in a larger context).</rdfs:comment>
+        <rdfs:label xml:lang="en">has designation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasFullText -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasFullText">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Message"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">typically, the full XML or JSON snippet (including comments, if any)</rdfs:comment>
+        <rdfs:label>has full text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasILUcode -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasILUcode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">ILU code (under EN 13044 series) is the standardized identification (owner, number, check digit) for intermodal loading units in Europe. The ILU code is designed for non-ISO containers, swap bodies, semi-trailers in intra-European combined transport.</rdfs:comment>
+        <rdfs:label xml:lang="en">has ILU code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasKemlerCode -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasKemlerCode">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Emergency response-related code (3 digits) as per RID 5.3.2.3</rdfs:comment>
+        <rdfs:label>has Kemler code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasLengthInMeters -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasLengthInMeters">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainLengthState"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label xml:lang="en">has length in meters</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasMassInTons -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasMassInTons">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainMassState"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">provisional. To be expanded, using SSN and QUDT.</rdfs:comment>
+        <rdfs:label xml:lang="en">has mass in tons</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasOtherCode -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasOtherCode">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has other code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#hasPrimaryCode -->
 
     <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasPrimaryCode">
@@ -821,6 +997,72 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">has primary code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasRFIDIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasRFIDIdentifier">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has RFID identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasRID_UN_Number -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasRID_UN_Number">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">RID chapter 3.2 Table A column 1. Identifies the dangerous substance. Number to be affixed to wagon or ITU according to RID chapter 5.</rdfs:comment>
+        <rdfs:label>has RID UN number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasRID_class -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasRID_class">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">RID chapter 3.2 Table A column 3a. Identifies the hazard type. Class code to be affixed to wagon or ITU according to RID chapter 5.</rdfs:comment>
+        <rdfs:label>has RID class</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#hasSpeed -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasSpeed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainSpeedState"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">current speed, in km/h</rdfs:comment>
+        <rdfs:label xml:lang="en">has speed</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -836,6 +1078,29 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#isStationary -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#isStationary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainMotionState"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">is stationary</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#issuedAt -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#issuedAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment xml:lang="en">Timestamp when the forecast value (most common case) or any other time value was generated or last updated</rdfs:comment>
+        <rdfs:label>issued at</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#locationName -->
 
     <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#locationName">
@@ -846,309 +1111,44 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#asPNG -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#messageID -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#asPNG">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#messageID">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#ContentLocation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#base64Binary"/>
-        <rdfs:label xml:lang="en">as PNG</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#asWKT -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#asWKT">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainGPSPositionState"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">single string, using WKT serialization</rdfs:comment>
-        <rdfs:label>as wkt</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#compositionValidationPassed -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#compositionValidationPassed">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainCompositionState"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:label>composition validation passed</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#createdAt -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#createdAt">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#VersionedDescription"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
-        <rdfs:comment xml:lang="en">like other time properties, it is not made functional, to allow multiple time representations (time zones).</rdfs:comment>
-        <rdfs:label xml:lang="en">created at</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#effectiveFrom -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#effectiveFrom">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#VersionedDescription"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
-        <rdfs:label xml:lang="en">effective from</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#effectiveUntil -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#effectiveUntil">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#VersionedDescription"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
-        <rdfs:comment xml:lang="en">Value can be computed by looking up updates and their &quot;effective from&quot; datetimes, supposing the newer versions invalidate earlier ones at the time they become effective. The ontology does not go that far (it would be a matter of SWRL rules).</rdfs:comment>
-        <rdfs:label xml:lang="en">effective until</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasBICCcode -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasBICCcode">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#ITU"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">BIC code according to ISO 6346 (4 letters, 6 numeric digits and 1 check digit)</rdfs:comment>
-        <rdfs:label>has BIC code</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasComment -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasComment">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Message"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has comment</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasDesignation -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasDesignation">
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Track"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Designation: to be discussed. Probably not unique. Can have short or long forms (e.g. &quot;Track 5&quot;  in the context of some yard; &quot;Alnabru yard track 5&quot; in a larger context).</rdfs:comment>
-        <rdfs:label xml:lang="en">has designation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasFullText -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasFullText">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Message"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">typically, the full XML or JSON snippet (including comments, if any)</rdfs:comment>
-        <rdfs:label>has full text</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasILUcode -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasILUcode">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#ITU"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">ILU code (under EN 13044 series) is the standardized identification (owner, number, check digit) for intermodal loading units in Europe. The ILU code is designed for non-ISO containers, swap bodies, semi-trailers in intra-European combined transport.</rdfs:comment>
-        <rdfs:label xml:lang="en">has ILU code</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasKemlerCode -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasKemlerCode">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#ITU"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Emergency response-related code (3 digits) as per RID 5.3.2.3</rdfs:comment>
-        <rdfs:label>has Kemler code</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasLengthInMeters -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasLengthInMeters">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainLengthState"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:label xml:lang="en">has length in meters</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasMassInTons -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasMassInTons">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainMassState"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment xml:lang="en">provisional. To be expanded, using SSN and QUDT.</rdfs:comment>
-        <rdfs:label xml:lang="en">has mass in tons</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasOtherCode -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasOtherCode">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#ITU"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has other code</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasRFIDIdentifier -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasRFIDIdentifier">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#ITU"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has RFID identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasRID_UN_Number -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasRID_UN_Number">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#ITU"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">RID chapter 3.2 Table A column 1. Identifies the dangerous substance. Number to be affixed to wagon or ITU according to RID chapter 5.</rdfs:comment>
-        <rdfs:label>has RID UN number</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasRID_class -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasRID_class">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#ITU"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">RID chapter 3.2 Table A column 3a. Identifies the hazard type. Class code to be affixed to wagon or ITU according to RID chapter 5.</rdfs:comment>
-        <rdfs:label>has RID class</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasSpeed -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#hasSpeed">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainSpeedState"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment xml:lang="en">current speed, in km/h</rdfs:comment>
-        <rdfs:label xml:lang="en">has speed</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#isStationary -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#isStationary">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainMotionState"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:label xml:lang="en">is stationary</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#issuedAt -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#issuedAt">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#OperationalTime"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
-        <rdfs:comment xml:lang="en">Timestamp when the forecast value (most common case) or any other time value was generated or last updated</rdfs:comment>
-        <rdfs:label>issued at</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#messageID -->
-
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#messageID">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TransportCollaborationMessage"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">message ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#messageVersion -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#messageVersion -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#messageVersion">
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TransportCollaborationMessage"/>
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#messageVersion">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">message version</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#name -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#name -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#name">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#name">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">name</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#reportedAt -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#reportedAt -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#reportedAt">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#reportedAt">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Message"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Message"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
         <rdfs:comment xml:lang="en">same semantics as prov:generatedAtTime</rdfs:comment>
         <rdfs:label xml:lang="en">reported at</rdfs:label>
@@ -1156,11 +1156,11 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#reportedBy -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#reportedBy -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#reportedBy">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#reportedBy">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TransportCollaborationMessage"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:label xml:lang="en">reported by</rdfs:label>
@@ -1168,11 +1168,11 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#sizeAndTypeCode -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#sizeAndTypeCode -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#sizeAndTypeCode">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#sizeAndTypeCode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Container"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Container"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">4 digit alphanum code for container size and type, according to ISO 6346</rdfs:comment>
         <rdfs:label>size and type code</rdfs:label>
@@ -1180,11 +1180,11 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#startsAtOrigin -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#startsAtOrigin -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#startsAtOrigin">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#startsAtOrigin">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">if False: means pass-through</rdfs:comment>
         <rdfs:label xml:lang="en">starts at origin</rdfs:label>
@@ -1192,11 +1192,11 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#stopsAtDestination -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#stopsAtDestination -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#stopsAtDestination">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#stopsAtDestination">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">if False: means pass-through</rdfs:comment>
         <rdfs:label xml:lang="en">stops at destination</rdfs:label>
@@ -1204,11 +1204,11 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#trainDepartureDate -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#trainDepartureDate -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#trainDepartureDate">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#trainDepartureDate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#TrainRun"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment xml:lang="en">Target datatype, xsd:date, is not part of OWL2 and may be incompatible with some reasoners. Pellet is fine, while HermiT (which adheres more strictly to OWL2 conventions) may complain.</rdfs:comment>
         <rdfs:comment xml:lang="en">The planned departure date that defines the train run. Remains unchanged even if the revised or actual departure is past midnight, hence on the next day.</rdfs:comment>
@@ -1218,11 +1218,11 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#uicWagonNumber -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#uicWagonNumber -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/taf/tafp5#uicWagonNumber">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#uicWagonNumber">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/taf/tafp5#Wagon"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">may it vary in a wagon&apos;s lifetime? if not, consider moving to rolling stock ontology.</rdfs:comment>
         <rdfs:label xml:lang="en">uic wagon number</rdfs:label>
@@ -2035,14 +2035,32 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#AdministrativeState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#AdministrativeState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:label xml:lang="en">Administrative state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#CarrierState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#CarrierState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:label xml:lang="en">Carrier state</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#Circulation -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Circulation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalProcess"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInterval"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInterval"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Most general class for processes involving running stock running on tracks.</rdfs:comment>
@@ -2051,11 +2069,50 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Container -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Container">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+        <rdfs:label xml:lang="en">Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#ContentLocation -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ContentLocation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:comment xml:lang="en">The image file as a BLOB. Possibly not in the same namespace as the Image individual.</rdfs:comment>
+        <rdfs:label>Content location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:label xml:lang="en">Customs status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#ExecutedJourney -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ExecutedJourney">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Journey"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath"/>
+        <rdfs:label xml:lang="en">Executed journey</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#Facility -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Facility">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntity"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation"/>
@@ -2068,11 +2125,208 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunction -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunction">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Constructed as the subset of all skos Concepts that are inScheme &quot;Facility role or function scheme&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">We assume functions to be permanent capabilities (by design), roles to be occasional capabilities (used in some situations), keeping those capabilities in a single terminology.</rdfs:comment>
+        <rdfs:label>Facility role or function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#FreightRole -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#FreightRole">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#LoadRole"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PassengerRole"/>
+        <rdfs:label>Freight role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#ITU -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Load"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+        <rdfs:label xml:lang="en">Intermodal Transport Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Image -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Image">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:label xml:lang="en">Image</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Journey -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Journey">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:label xml:lang="en">Journey</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription"/>
+        <rdfs:comment xml:lang="en">Description that is common to paths, planned journeys, and executed journeys. It has an origin, departure time, destination, arrival time.
+
+It consists in JourneySections, each journey section has the same structure.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Since journey structures are meant to be shared, their instances should not be modified once used. New instances should be minted for every change.</rdfs:comment>
+        <rdfs:label>Journey schedule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#JourneySection -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#JourneySection">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#JourneySchedule"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#SchedulePart"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#StaticSection"/>
+        <rdfs:comment xml:lang="en">Journey sections are chained by properties nextSection and previousSection.</rdfs:comment>
+        <rdfs:label xml:lang="en">Journey section</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/JourneySection</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#Load -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Load">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact"/>
         <rdfs:label xml:lang="en">Load</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#LoadRole -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#LoadRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+        <rdfs:label>Load role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#LoadState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#LoadState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FreightRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+                            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Load state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#LocomotiveRole -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#LocomotiveRole">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TractionProvisionRole"/>
+        <rdfs:label xml:lang="en">Locomotive role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Message -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Message">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">Superclass for all messages exchanged in the context of the FP5 demo. Properties are from PROV-O (emitter, generation time) and full text (string, e.g. JSON snippet). The full text follows a schema not further specified here (TAF XSD or FP5-specific JSON schema, respectively).
+Message payloads are mostly Operational States or VersionedDescriptions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Message</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+        <rdfs:label xml:lang="en">Operational artifact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:comment xml:lang="en">Abstract class for all things related to the process of operating a freight train; the disjoint union of all subclasses.</rdfs:comment>
+        <rdfs:label>Operational entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalTime"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInterval"/>
+        <rdfs:comment xml:lang="en">An instant related to some operational event (planned / forecast / observed / ...).</rdfs:comment>
+        <rdfs:label xml:lang="en">Operational instant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalInterval -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalInterval">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalTime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#hasBeginning"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#hasEnd"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Time interval, as used in the context of operations. Can play various roles (actual, planned, forecast...). Implementer can choose to coerce it to proper intervals (beginning and end time are then distinct individuals with distinct dateTime values).</rdfs:comment>
+        <rdfs:comment xml:lang="en">consider linking with W3C time and/or RSM time</rdfs:comment>
+        <rdfs:label xml:lang="en">Operational interval</rdfs:label>
     </owl:Class>
     
 
@@ -2081,10 +2335,142 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
         <rdfs:comment xml:lang="en">TAF TSI ontology: identifies a Location using a LocationIdent</rdfs:comment>
         <rdfs:label xml:lang="en">Operational location</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/Location</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalProcess -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalProcess">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+        <rdfs:label xml:lang="en">Operational process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalRole -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+        <rdfs:comment xml:lang="en">played by some Organization (Legal Entity)</rdfs:comment>
+        <rdfs:label>Operational role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalState">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasParticipant"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An operational state is a situation (in the sense of DUL). An operational is a typical payload of any operational message.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Note: other states may concern yards, depots, stations... to be discussed.</rdfs:comment>
+        <rdfs:label xml:lang="en">Operational state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalTime -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalTime">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+        <rdfs:comment xml:lang="en">Abstract superclass for time information in operations. The context in which Operational time is used tells whether this is an actual time, or a planned time, or a forecast time, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Operational time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationsStakeholder -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationsStakeholder">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/regorg#RegisteredOrganization"/>
+        <rdfs:comment xml:lang="en">Any registered organisation that is involved in the train run (operators, carriers, consignors and consignees, wagon owners...)</rdfs:comment>
+        <rdfs:label xml:lang="en">Operations stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#PassengerRole -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#PassengerRole">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#LoadRole"/>
+        <rdfs:label>Passenger role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Path -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Path">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath"/>
+        <rdfs:label xml:lang="en">Path</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#PlannedJourney -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourney">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath"/>
+        <rdfs:comment xml:lang="en">The planned journey may share the same JourneySchedule as the path, or deviate from it (e.g. deviations related to temporary speed restrictions, added or canceled stops). It may be updated after the train departure (in which case it gives rise to a forecast schedule, of a different class).</rdfs:comment>
+        <rdfs:label xml:lang="en">Planned journey</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Journey"/>
+        <rdfs:label xml:lang="en">Planned journey or path</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#ReferenceOTN -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ReferenceOTN">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:label xml:lang="en">Reference OTN</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/ReferenceOTN</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#SchedulePart -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#SchedulePart">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:label xml:lang="en">Schedule part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#ServiceType -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ServiceType">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:label xml:lang="en">Service type</rdfs:label>
     </owl:Class>
     
 
@@ -2098,11 +2484,63 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#StaticSection -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#StaticSection">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#SchedulePart"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#atTime"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#hasIM"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationsStakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Journey sections &quot;at rest&quot; (but possibly implying shunting movements inside an operational location). May host maintenance or customes operations.</rdfs:comment>
+        <rdfs:label xml:lang="en">Static section</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#SwapBody -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#SwapBody">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+        <rdfs:label xml:lang="en">Swap body</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TafMessage -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TafMessage">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Message"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage"/>
+        <rdfs:comment xml:lang="en">Message compliant with TAF TSI XSD</rdfs:comment>
+        <rdfs:label xml:lang="en">TAF message</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TemporalRole -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:comment xml:lang="en">Role definition for operational instants or (time) intervals. More instances can be added (e.g. &quot;contractual&quot;), but in any case the context (situation) should be expressed (planned in what document? forecast by whom?), lest the roles be purely decorative.</rdfs:comment>
+        <rdfs:label xml:lang="en">Temporal role</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#Track -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Track">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/network/netw#NetEntity"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalArtifact"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation"/>
@@ -2112,6 +2550,266 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
         <rdfs:comment xml:lang="en">Note: atOperationalLocation is provided by superclass OperationalArtifact</rdfs:comment>
         <rdfs:comment xml:lang="en">Track in the operational sense, i.e. a stretch of track, usually continuous, that is individuated in operating (driving, shunting) instructions.</rdfs:comment>
         <rdfs:label xml:lang="en">Track</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TractionProvisionRole -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TractionProvisionRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+        <rdfs:comment xml:lang="en">Can be extended to include powered car or trailer roles.
+Case of hauled locomotive (fr: marchandise roulante) does not belong here, as no traction is provided.
+To be differetiated from (possible, not included) traction provider role, the agent being an organization in that case.</rdfs:comment>
+        <rdfs:comment xml:lang="en">played by one or more locomotives on a train run</rdfs:comment>
+        <rdfs:label>Traction provision role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Trailer -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Trailer">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+        <rdfs:label xml:lang="en">Trailer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Train -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Train">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact"/>
+        <rdfs:comment xml:lang="en">For want of a better class name: denotes the rolling stock (locos, wagons...) AND their supplies (possibly depleted) AND their (variable) loads, considered as a whole, i.e. whatever is moved somewhere between origin and destination in a Train run.
+
+Not to be confused with the operational concept &quot;Train&quot; (a process), embodied here by class TrainRun.</rdfs:comment>
+        <rdfs:label xml:lang="en">Train</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainCompositionState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainCompositionState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:label xml:lang="en">Train composition state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainCustomsState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainCustomsState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRunState"/>
+        <rdfs:label xml:lang="en">Train customs state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainGPSPositionState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainGPSPositionState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:label xml:lang="en">Train GPS position state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainJourneyState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainJourneyState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRunState"/>
+        <rdfs:label xml:lang="en">Train journey state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainLengthState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainLengthState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:label xml:lang="en">Train length state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainLocationState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainLocationState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRunState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Train location state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainMassState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainMassState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:comment xml:lang="en">Laden mass, incl. supplies</rdfs:comment>
+        <rdfs:label xml:lang="en">Train mass state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainMotionState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainMotionState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:label>Train motion state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainRun -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainRun">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Circulation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#hasSubProcess"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainService"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Denotes a train run (operated on a particular date), equivalent to &quot;Train&quot; in TAF TSI, not a &quot;timetable entry&quot;.
+It is a process and may have parts that are sub-processes.</rdfs:comment>
+        <rdfs:label>Train run</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/Train</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainRunState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainRunState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#isStateOfTrainRun"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Situation (State) of a train run. Several subclasses define the train run state from several points of view.</rdfs:comment>
+        <rdfs:label>Train run state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainService -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainService">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#hasServiceType"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">e.g. rolling stock maintenance or customs checks</rdfs:comment>
+        <rdfs:label>Train servicing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:comment xml:lang="en">Note: might be generalized for making observations on all processes</rdfs:comment>
+        <rdfs:label xml:lang="en">Train servicing result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainServicingState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#StaticSection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Note: other service types (customs, track assignment) rather relate to the Train run.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Train servicing process, e.g. maintenance, brake inspection...</rdfs:comment>
+        <rdfs:label xml:lang="en">Train servicing state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainSpeedState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainSpeedState">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainState"/>
+        <rdfs:label xml:lang="en">Train speed state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainState -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainState">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                <owl:someValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Train"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Characterizes the state of the Train (as a physical asset), e.g. speed, mass, GPS coordinates of some particular point of the train, etc.
+Since the subclasses are not disjoint, the ontology user is free to use a single individual to combine information. Ultimately, most useful combinations should give rise to dedicated subclasses, in the interest of efficient data serialization and transformation to/from document formats such as JSON or XML.</rdfs:comment>
+        <rdfs:label xml:lang="en">Train state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TransportCollaborationMessage">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Message"/>
+        <rdfs:comment xml:lang="en">FP5-specific messages</rdfs:comment>
+        <rdfs:label xml:lang="en">Transport collaboration message</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#UndeterminedJourney -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#UndeterminedJourney">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourneyOrPath"/>
+        <rdfs:comment>Undetermined journey might be the correct expression in EN-speaking areas (unregulated train seems to exist but seems to be related to dispatcher roles, hence avoided here). At SNCF, was called &quot; marche indeterminee (abbr. MI)&quot;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Undetermined journey</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
+        <rdfs:comment xml:lang="en">A description (e.g. of a schedule, or other operational specs such as orders issued to drivers) that can be revised, and is effective (= applicable) from a certain datetime. The versions are chained as a simple list (nop forks, no loops).</rdfs:comment>
+        <rdfs:label>Versioned description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Wagon -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon">
+        <rdfs:subClassOf rdf:resource="http://cdm.ovh/rsm/rolling_stock/typology/typology#Wagon"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact"/>
+        <rdfs:label xml:lang="en">Wagon</rdfs:label>
     </owl:Class>
     
 
@@ -2239,204 +2937,6 @@ Note: org:identifier is a simplistic way to identify companies; the identifier m
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#AdministrativeState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#AdministrativeState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:label xml:lang="en">Administrative state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#CarrierState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#CarrierState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:label xml:lang="en">Carrier state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Container -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Container">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#ITU"/>
-        <rdfs:label xml:lang="en">Container</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#ContentLocation -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#ContentLocation">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:comment xml:lang="en">The image file as a BLOB. Possibly not in the same namespace as the Image individual.</rdfs:comment>
-        <rdfs:label>Content location</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#CustomsStatus -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#CustomsStatus">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:label xml:lang="en">Customs status</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#ExecutedJourney -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#ExecutedJourney">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#Journey"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath"/>
-        <rdfs:label xml:lang="en">Executed journey</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:comment xml:lang="en">Constructed as the subset of all skos Concepts that are inScheme &quot;Facility role or function scheme&quot;.</rdfs:comment>
-        <rdfs:comment xml:lang="en">We assume functions to be permanent capabilities (by design), roles to be occasional capabilities (used in some situations), keeping those capabilities in a single terminology.</rdfs:comment>
-        <rdfs:label>Facility role or function</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#FreightRole -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#FreightRole">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#LoadRole"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/taf/tafp5#PassengerRole"/>
-        <rdfs:label>Freight role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#ITU -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#ITU">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Load"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/taf/tafp5#Wagon"/>
-        <rdfs:label xml:lang="en">Intermodal Transport Unit</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Image -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Image">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
-        <rdfs:label xml:lang="en">Image</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Journey -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Journey">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:label xml:lang="en">Journey</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#JourneySchedule -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#JourneySchedule">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#VersionedDescription"/>
-        <rdfs:comment xml:lang="en">Description that is common to paths, planned journeys, and executed journeys. It has an origin, departure time, destination, arrival time.
-
-It consists in JourneySections, each journey section has the same structure.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Since journey structures are meant to be shared, their instances should not be modified once used. New instances should be minted for every change.</rdfs:comment>
-        <rdfs:label>Journey schedule</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#JourneySection -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#JourneySection">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#JourneySchedule"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#SchedulePart"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/taf/tafp5#StaticSection"/>
-        <rdfs:comment xml:lang="en">Journey sections are chained by properties nextSection and previousSection.</rdfs:comment>
-        <rdfs:label xml:lang="en">Journey section</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/JourneySection</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#LoadRole -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#LoadRole">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-        <rdfs:label>Load role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#LoadState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#LoadState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Interval"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#FreightRole"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#ITU"/>
-                            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">Load state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#LocomotiveRole -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#LocomotiveRole">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TractionProvisionRole"/>
-        <rdfs:label xml:lang="en">Locomotive role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Message -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Message">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-        <rdfs:comment xml:lang="en">Superclass for all messages exchanged in the context of the FP5 demo. Properties are from PROV-O (emitter, generation time) and full text (string, e.g. JSON snippet). The full text follows a schema not further specified here (TAF XSD or FP5-specific JSON schema, respectively).
-Message payloads are mostly Operational States or VersionedDescriptions.</rdfs:comment>
-        <rdfs:label xml:lang="en">Message</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://cdm.ovh/taf/tafp5#OTN -->
 
     <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OTN">
@@ -2444,505 +2944,6 @@ Message payloads are mostly Operational States or VersionedDescriptions.</rdfs:c
         <rdfs:comment xml:lang="en">Operational Train Number. A train may bear different numbers along its course.</rdfs:comment>
         <rdfs:label xml:lang="en">OTN</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/OperationalTrainNumberIdentifier</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalArtifact -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalArtifact">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-        <rdfs:label xml:lang="en">Operational artifact</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalEntity -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalEntity">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:comment xml:lang="en">Abstract class for all things related to the process of operating a freight train; the disjoint union of all subclasses.</rdfs:comment>
-        <rdfs:label>Operational entity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalInstant -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalInstant">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalTime"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInterval"/>
-        <rdfs:comment xml:lang="en">An instant related to some operational event (planned / forecast / observed / ...).</rdfs:comment>
-        <rdfs:label xml:lang="en">Operational instant</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalInterval -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalInterval">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Interval"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalTime"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasBeginning"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInstant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasEnd"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInstant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Time interval, as used in the context of operations. Can play various roles (actual, planned, forecast...). Implementer can choose to coerce it to proper intervals (beginning and end time are then distinct individuals with distinct dateTime values).</rdfs:comment>
-        <rdfs:label xml:lang="en">Operational interval</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalProcess -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalProcess">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-        <rdfs:label xml:lang="en">Operational process</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalRole -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalRole">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-        <rdfs:comment xml:lang="en">played by some Organization (Legal Entity)</rdfs:comment>
-        <rdfs:label>Operational role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalState">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasParticipant"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An operational state is a situation (in the sense of DUL). An operational is a typical payload of any operational message.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Note: other states may concern yards, depots, stations... to be discussed.</rdfs:comment>
-        <rdfs:label xml:lang="en">Operational state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationalTime -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationalTime">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
-        <rdfs:comment xml:lang="en">Abstract superclass for time information in operations. The context in which Operational time is used tells whether this is an actual time, or a planned time, or a forecast time, etc.</rdfs:comment>
-        <rdfs:label xml:lang="en">Operational time</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OperationsStakeholder -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OperationsStakeholder">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/regorg#RegisteredOrganization"/>
-        <rdfs:comment xml:lang="en">Any registered organisation that is involved in the train run (operators, carriers, consignors and consignees, wagon owners...)</rdfs:comment>
-        <rdfs:label xml:lang="en">Operations stakeholder</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#PassengerRole -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#PassengerRole">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#LoadRole"/>
-        <rdfs:label>Passenger role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Path -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Path">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath"/>
-        <rdfs:label xml:lang="en">Path</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#PlannedJourney -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#PlannedJourney">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath"/>
-        <rdfs:comment xml:lang="en">The planned journey may share the same JourneySchedule as the path, or deviate from it (e.g. deviations related to temporary speed restrictions, added or canceled stops). It may be updated after the train departure (in which case it gives rise to a forecast schedule, of a different class).</rdfs:comment>
-        <rdfs:label xml:lang="en">Planned journey</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#Journey"/>
-        <rdfs:label xml:lang="en">Planned journey or path</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#ReferenceOTN -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#ReferenceOTN">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:label xml:lang="en">Reference OTN</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/ReferenceOTN</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#SchedulePart -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#SchedulePart">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
-        <rdfs:label xml:lang="en">Schedule part</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#ServiceType -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#ServiceType">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:label xml:lang="en">Service type</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#StaticSection -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#StaticSection">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#SchedulePart"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#atTime"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#OperationalInterval"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasIM"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#OperationsStakeholder"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Journey sections &quot;at rest&quot; (but possibly implying shunting movements inside an operational location). May host maintenance or customes operations.</rdfs:comment>
-        <rdfs:label xml:lang="en">Static section</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#SwapBody -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#SwapBody">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#ITU"/>
-        <rdfs:label xml:lang="en">Swap body</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TafMessage -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TafMessage">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#Message"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/taf/tafp5#TransportCollaborationMessage"/>
-        <rdfs:comment xml:lang="en">Message compliant with TAF TSI XSD</rdfs:comment>
-        <rdfs:label xml:lang="en">TAF message</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TemporalRole -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TemporalRole">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:comment xml:lang="en">Role definition for operational instants or (time) intervals. More instances can be added (e.g. &quot;contractual&quot;), but in any case the context (situation) should be expressed (planned in what document? forecast by whom?), lest the roles be purely decorative.</rdfs:comment>
-        <rdfs:label xml:lang="en">Temporal role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TractionProvisionRole -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TractionProvisionRole">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-        <rdfs:comment xml:lang="en">Can be extended to include powered car or trailer roles.
-Case of hauled locomotive (fr: marchandise roulante) does not belong here, as no traction is provided.
-To be differetiated from (possible, not included) traction provider role, the agent being an organization in that case.</rdfs:comment>
-        <rdfs:comment xml:lang="en">played by one or more locomotives on a train run</rdfs:comment>
-        <rdfs:label>Traction provision role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Trailer -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Trailer">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#ITU"/>
-        <rdfs:label xml:lang="en">Trailer</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Train -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Train">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalArtifact"/>
-        <rdfs:comment xml:lang="en">For want of a better class name: denotes the rolling stock (locos, wagons...) AND their supplies (possibly depleted) AND their (variable) loads, considered as a whole, i.e. whatever is moved somewhere between origin and destination in a Train run.
-
-Not to be confused with the operational concept &quot;Train&quot; (a process), embodied here by class TrainRun.</rdfs:comment>
-        <rdfs:label xml:lang="en">Train</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainCompositionState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainCompositionState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:label xml:lang="en">Train composition state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainCustomsState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainCustomsState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainRunState"/>
-        <rdfs:label xml:lang="en">Train customs state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainGPSPositionState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainGPSPositionState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:label xml:lang="en">Train GPS position state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainJourneyState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainJourneyState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainRunState"/>
-        <rdfs:label xml:lang="en">Train journey state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainLengthState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainLengthState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:label xml:lang="en">Train length state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainLocationState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainLocationState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainRunState"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#atOperationalLocation"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">Train location state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainMassState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainMassState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:comment xml:lang="en">Laden mass, incl. supplies</rdfs:comment>
-        <rdfs:label xml:lang="en">Train mass state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainMotionState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainMotionState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:label>Train motion state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainRun -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainRun">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#Circulation"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasSubProcess"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#TrainService"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Denotes a train run (operated on a particular date), equivalent to &quot;Train&quot; in TAF TSI, not a &quot;timetable entry&quot;.
-It is a process and may have parts that are sub-processes.</rdfs:comment>
-        <rdfs:label>Train run</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/Train</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainRunState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainRunState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#isStateOfTrainRun"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Situation (State) of a train run. Several subclasses define the train run state from several points of view.</rdfs:comment>
-        <rdfs:label>Train run state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainService -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainService">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalProcess"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasServiceType"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">e.g. rolling stock maintenance or customs checks</rdfs:comment>
-        <rdfs:label>Train servicing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainServicingResult -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainServicingResult">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:comment xml:lang="en">Note: might be generalized for making observations on all processes</rdfs:comment>
-        <rdfs:label xml:lang="en">Train servicing result</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainServicingState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainServicingState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
-                <owl:allValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#StaticSection"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Note: other service types (customs, track assignment) rather relate to the Train run.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Train servicing process, e.g. maintenance, brake inspection...</rdfs:comment>
-        <rdfs:label xml:lang="en">Train servicing state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainSpeedState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainSpeedState">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainState"/>
-        <rdfs:label xml:lang="en">Train speed state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TrainState -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TrainState">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalState"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
-                <owl:someValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#Train"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Characterizes the state of the Train (as a physical asset), e.g. speed, mass, GPS coordinates of some particular point of the train, etc.
-Since the subclasses are not disjoint, the ontology user is free to use a single individual to combine information. Ultimately, most useful combinations should give rise to dedicated subclasses, in the interest of efficient data serialization and transformation to/from document formats such as JSON or XML.</rdfs:comment>
-        <rdfs:label xml:lang="en">Train state</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#TransportCollaborationMessage -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#TransportCollaborationMessage">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#Message"/>
-        <rdfs:comment xml:lang="en">FP5-specific messages</rdfs:comment>
-        <rdfs:label xml:lang="en">Transport collaboration message</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#UndeterminedJourney -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#UndeterminedJourney">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#PlannedJourneyOrPath"/>
-        <rdfs:comment>Undetermined journey might be the correct expression in EN-speaking areas (unregulated train seems to exist but seems to be related to dispatcher roles, hence avoided here). At SNCF, was called &quot; marche indeterminee (abbr. MI)&quot;.</rdfs:comment>
-        <rdfs:label xml:lang="en">Undetermined journey</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#VersionedDescription -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#VersionedDescription">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalEntity"/>
-        <rdfs:comment xml:lang="en">A description (e.g. of a schedule, or other operational specs such as orders issued to drivers) that can be revised, and is effective (= applicable) from a certain datetime. The versions are chained as a simple list (nop forks, no loops).</rdfs:comment>
-        <rdfs:label>Versioned description</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#Wagon -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#Wagon">
-        <rdfs:subClassOf rdf:resource="http://cdm.ovh/rsm/rolling_stock/typology/typology#Wagon"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#OperationalArtifact"/>
-        <rdfs:label xml:lang="en">Wagon</rdfs:label>
     </owl:Class>
     
 
@@ -2974,268 +2975,268 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Actual -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Actual -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Actual">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TemporalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Actual">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole"/>
         <rdfs:label>Actual</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#CargoCarrier -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#CargoCarrier -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#CargoCarrier">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#OperationalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#CargoCarrier">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalRole"/>
         <rdfs:label xml:lang="en">Cargo carrier</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://data.europa.eu/949/Carrier"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Cleared -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Cleared -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Cleared">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#CustomsStatus"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Cleared">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus"/>
         <rdfs:label xml:lang="en">Cleared</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Contractual -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Contractual -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Contractual">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TemporalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Contractual">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole"/>
         <rdfs:label xml:lang="en">Contractual</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#FacilityRoleOrFunctionScheme -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunctionScheme -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunctionScheme">
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunctionScheme">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="en">Facility role or function scheme</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Failure -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Failure -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Failure">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TrainServicingResult"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Failure">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult"/>
         <rdfs:label xml:lang="en">Failure</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Forecast -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Forecast -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Forecast">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TemporalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Forecast">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole"/>
         <rdfs:label>Forecast</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Inspected -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Inspected -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Inspected">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#CustomsStatus"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Inspected">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus"/>
         <rdfs:label xml:lang="en">Inspected</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Interrupted -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Interrupted -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Interrupted">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TrainServicingResult"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Interrupted">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult"/>
         <rdfs:label xml:lang="en">Interrupted</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#LeadCarrier -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#LeadCarrier -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#LeadCarrier">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#OperationalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#LeadCarrier">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalRole"/>
         <rdfs:label xml:lang="en">Lead carrier</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://data.europa.eu/949/LeadCarrier"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#LeadRU -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#LeadRU -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#LeadRU">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#OperationalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#LeadRU">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalRole"/>
         <rdfs:label xml:lang="en">Lead RU</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Maintenance -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Maintenance -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Maintenance">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#ServiceType"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Maintenance">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ServiceType"/>
         <rdfs:label>maintenance</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Ongoing -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Ongoing -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Ongoing">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TrainServicingResult"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Ongoing">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult"/>
         <rdfs:label xml:lang="en">Ongoing</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Pending -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Pending -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Pending">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#CustomsStatus"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Pending">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus"/>
         <rdfs:label xml:lang="en">Pending</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Planned -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Planned -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Planned">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TemporalRole"/>
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TrainServicingResult"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Planned">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole"/>
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult"/>
         <rdfs:label>Planned</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#PreCleared -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#PreCleared -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#PreCleared">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#CustomsStatus"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#PreCleared">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus"/>
         <rdfs:label xml:lang="en">Pre cleared</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Recommended -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Recommended -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Recommended">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TemporalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Recommended">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole"/>
         <rdfs:label xml:lang="en">Recommended</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Success -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Success -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Success">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TrainServicingResult"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Success">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult"/>
         <rdfs:label xml:lang="en">Success</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#TrainOperator -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#TrainOperator -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#TrainOperator">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#OperationalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainOperator">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalRole"/>
         <rdfs:label xml:lang="en">Train operator</rdfs:label>
         <rdfs:seeAlso xml:lang="en">No matching class in ERA Telematics ontology v. 0.2. RU is identified bny a data property with no specified range.</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Updated -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Updated -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Updated">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#TemporalRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Updated">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TemporalRole"/>
         <rdfs:label xml:lang="en">Updated</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Workshop -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Workshop -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Workshop">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction"/>
-        <skos:inScheme rdf:resource="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunctionScheme"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Workshop">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunction"/>
+        <skos:inScheme rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunctionScheme"/>
         <rdfs:label xml:lang="en">Workshop</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#Yard -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#Yard -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#Yard">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunction"/>
-        <skos:inScheme rdf:resource="https://cdm.ovh/taf/tafp5#FacilityRoleOrFunctionScheme"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Yard">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunction"/>
+        <skos:inScheme rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FacilityRoleOrFunctionScheme"/>
         <rdfs:label xml:lang="en">Yard</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#asFreight -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#asFreight -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#asFreight">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#FreightRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#asFreight">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#FreightRole"/>
         <rdfs:label xml:lang="en">as freight</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#asPassenger -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#asPassenger -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#asPassenger">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#PassengerRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#asPassenger">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#PassengerRole"/>
         <rdfs:label xml:lang="en">as passenger</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#brakeCheck -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#brakeCheck -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#brakeCheck">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#ServiceType"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#brakeCheck">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ServiceType"/>
         <rdfs:label xml:lang="en">brake check</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#controlledLocomotiveRole -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#controlledLocomotiveRole -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#controlledLocomotiveRole">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#LocomotiveRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#controlledLocomotiveRole">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#LocomotiveRole"/>
         <rdfs:label>controlled locomotive role</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#customs -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#customs -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#customs">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#ServiceType"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#customs">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#ServiceType"/>
         <rdfs:label xml:lang="en">customs</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#leadingLocomotiveRole -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#leadingLocomotiveRole -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#leadingLocomotiveRole">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#LocomotiveRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#leadingLocomotiveRole">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#LocomotiveRole"/>
         <rdfs:label>leading locomotive role</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/taf/tafp5#locomotiveRole -->
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#locomotiveRole -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/taf/tafp5#locomotiveRole">
-        <rdf:type rdf:resource="https://cdm.ovh/taf/tafp5#LocomotiveRole"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/operations/rope/rope#locomotiveRole">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#LocomotiveRole"/>
         <rdfs:label xml:lang="en">locomotive role</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3251,59 +3252,59 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
 
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
-        <owl:someValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#TrainRun"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainRunState"/>
+        <owl:someValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRunState"/>
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
-        <owl:someValuesFrom rdf:resource="https://cdm.ovh/taf/tafp5#StaticSection"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/taf/tafp5#TrainService"/>
+        <owl:someValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#StaticSection"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainService"/>
     </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Container"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#SwapBody"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Trailer"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Facility"/>
             <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Load"/>
             <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Track"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Train"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Train"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#ITU"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Wagon"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#LoadRole"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact"/>
             <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalLocation"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#LoadRole"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#OperationalArtifact"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#OperationalProcess"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#OperationalRole"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#OperationalState"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#TractionProvisionRole"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#VersionedDescription"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalProcess"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalRole"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalState"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#TractionProvisionRole"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#VersionedDescription"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Container"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#SwapBody"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Trailer"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#ITU"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#TrainRun"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Wagon"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#Path"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#PlannedJourney"/>
-            <rdf:Description rdf:about="https://cdm.ovh/taf/tafp5#UndeterminedJourney"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#Path"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#PlannedJourney"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/operations/rope/rope#UndeterminedJourney"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
