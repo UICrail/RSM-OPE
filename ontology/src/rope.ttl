@@ -294,7 +294,7 @@ rope:hasJourneySchedule rdf:type owl:ObjectProperty ;
 ###  https://cdm.ovh/rsm/operations/rope/rope#hasOTN
 rope:hasOTN rdf:type owl:ObjectProperty ;
             rdfs:domain rope:TrainRun ;
-            rdfs:range <https://cdm.ovh/taf/tafp5#OTN> ;
+            rdfs:range rope:OTN ;
             rdfs:comment "The same train run can have different Operational Train Numbers in its course, depending on the operator or network over which it is run."@en ;
             rdfs:label "has OTN"@en ;
             rdfs:seeAlso "http://data.europa.eu/949/hasOperationalTrainNumberIdentifier"^^xsd:anyURI .
@@ -532,11 +532,6 @@ rope:trainLeadRU rdf:type owl:ObjectProperty ;
                  rdfs:comment "Points to the \"lead RU\" for the entire train"@en ;
                  rdfs:label "train lead RU"@en ;
                  rdfs:seeAlso "http://data.europa.eu/949/TrainOperatingRU"^^xsd:anyURI .
-
-
-###  https://cdm.ovh/taf/tafp5#hasParticipant
-<https://cdm.ovh/taf/tafp5#hasParticipant> rdf:type owl:ObjectProperty ;
-                                           rdfs:label "has participant"@en .
 
 
 #################################################################
@@ -1133,6 +1128,13 @@ Message payloads are mostly Operational States or VersionedDescriptions."""@en ;
              rdfs:label "Message"@en .
 
 
+###  https://cdm.ovh/rsm/operations/rope/rope#OTN
+rope:OTN rdf:type owl:Class ;
+         rdfs:comment "Operational Train Number. A train may bear different numbers along its course."@en ;
+         rdfs:label "OTN"@en ;
+         rdfs:seeAlso "http://data.europa.eu/949/OperationalTrainNumberIdentifier"^^xsd:anyURI .
+
+
 ###  https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact
 rope:OperationalArtifact rdf:type owl:Class ;
                          rdfs:subClassOf dul:DesignedArtifact ,
@@ -1201,11 +1203,11 @@ rope:OperationalState rdf:type owl:Class ;
                       rdfs:subClassOf dul:Situation ,
                                       rope:OperationalEntity ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty dul:hasSetting ;
+                                        owl:onProperty dul:hasParticipant ;
                                         owl:allValuesFrom rope:OperationalEntity
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty <https://cdm.ovh/taf/tafp5#hasParticipant> ;
+                                        owl:onProperty dul:hasSetting ;
                                         owl:allValuesFrom rope:OperationalEntity
                                       ] ;
                       rdfs:comment "An operational state is a situation (in the sense of DUL). An operational is a typical payload of any operational message."@en ,
@@ -1503,13 +1505,6 @@ rope:Wagon rdf:type owl:Class ;
            rdfs:subClassOf <http://cdm.ovh/rsm/rolling_stock/typology/typology#Wagon> ,
                            rope:OperationalArtifact ;
            rdfs:label "Wagon"@en .
-
-
-###  https://cdm.ovh/taf/tafp5#OTN
-<https://cdm.ovh/taf/tafp5#OTN> rdf:type owl:Class ;
-                                rdfs:comment "Operational Train Number. A train may bear different numbers along its course."@en ;
-                                rdfs:label "OTN"@en ;
-                                rdfs:seeAlso "http://data.europa.eu/949/OperationalTrainNumberIdentifier"^^xsd:anyURI .
 
 
 #################################################################

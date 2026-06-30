@@ -2297,6 +2297,38 @@ Message payloads are mostly Operational States or VersionedDescriptions.</lexica
           </annotations>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/operations/rope/rope#OTN</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#OTN</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>OTN</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#OTN</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Operational Train Number. A train may bear different numbers along its course.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/operations/rope/rope#OTN</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#seeAlso</property>
+              <object>
+                <lexicalForm>http://data.europa.eu/949/OperationalTrainNumberIdentifier</lexicalForm>
+                <datatype>http://www.w3.org/2001/XMLSchema#anyURI</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rsm/operations/rope/rope#Ongoing</value>
           <annotations>
             <annotation>
@@ -5076,52 +5108,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <value>https://cdm.ovh/taf/tafp5#</value>
         </iri>
         <iri>
-          <value>https://cdm.ovh/taf/tafp5#OTN</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#OTN</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>OTN</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#OTN</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>Operational Train Number. A train may bear different numbers along its course.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#OTN</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#seeAlso</property>
-              <object>
-                <lexicalForm>http://data.europa.eu/949/OperationalTrainNumberIdentifier</lexicalForm>
-                <datatype>http://www.w3.org/2001/XMLSchema#anyURI</datatype>
-                <language/>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/taf/tafp5#hasParticipant</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/taf/tafp5#hasParticipant</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has participant</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://creativecommons.org/licenses/by-sa/4.0/</value>
         </iri>
         <iri>
@@ -5464,7 +5450,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node type="concept" color="#fcfcfc" id="n1">
           <geometry y="-1960" x="-1402" height="50" width="125"/>
-          <iri>https://cdm.ovh/taf/tafp5#OTN</iri>
+          <iri>https://cdm.ovh/rsm/operations/rope/rope#OTN</iri>
           <label y="-1960" size="12" x="-1402" height="23" width="125" customSize="0"/>
         </node>
         <node type="role" color="#fcfcfc" id="n10">
@@ -7917,7 +7903,7 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         </node>
         <node type="role" color="#c2b078" id="n35">
           <geometry y="-170" x="570" height="50" width="70"/>
-          <iri>https://cdm.ovh/taf/tafp5#hasParticipant</iri>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant</iri>
           <label y="-200" size="12" x="570" height="23" width="85" customSize="0"/>
         </node>
         <node type="domain-restriction" color="#fcfcfc" id="n36">
