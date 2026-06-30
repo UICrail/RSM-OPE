@@ -431,7 +431,7 @@ This ontology refers to the DUL upper ontology (DOLCE+DnS Ultralite) which is im
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/operations/rope/rope#hasOTN">
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#TrainRun"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/taf/tafp5#OTN"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OTN"/>
         <rdfs:comment xml:lang="en">The same train run can have different Operational Train Numbers in its course, depending on the operator or network over which it is run.</rdfs:comment>
         <rdfs:label xml:lang="en">has OTN</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/hasOperationalTrainNumberIdentifier</rdfs:seeAlso>
@@ -756,14 +756,6 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         <rdfs:comment xml:lang="en">Points to the &quot;lead RU&quot; for the entire train</rdfs:comment>
         <rdfs:label xml:lang="en">train lead RU</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/TrainOperatingRU</rdfs:seeAlso>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#hasParticipant -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/taf/tafp5#hasParticipant">
-        <rdfs:label xml:lang="en">has participant</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2275,6 +2267,17 @@ Message payloads are mostly Operational States or VersionedDescriptions.</rdfs:c
     
 
 
+    <!-- https://cdm.ovh/rsm/operations/rope/rope#OTN -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OTN">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:comment xml:lang="en">Operational Train Number. A train may bear different numbers along its course.</rdfs:comment>
+        <rdfs:label xml:lang="en">OTN</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/OperationalTrainNumberIdentifier</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
     <!-- https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact">
@@ -2371,13 +2374,13 @@ Message payloads are mostly Operational States or VersionedDescriptions.</rdfs:c
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
                 <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/taf/tafp5#hasParticipant"/>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
                 <owl:allValuesFrom rdf:resource="https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2934,17 +2937,6 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rst/cons/cons#RollingStock"/>
     </rdf:Description>
-    
-
-
-    <!-- https://cdm.ovh/taf/tafp5#OTN -->
-
-    <owl:Class rdf:about="https://cdm.ovh/taf/tafp5#OTN">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
-        <rdfs:comment xml:lang="en">Operational Train Number. A train may bear different numbers along its course.</rdfs:comment>
-        <rdfs:label xml:lang="en">OTN</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/949/OperationalTrainNumberIdentifier</rdfs:seeAlso>
-    </owl:Class>
     
 
 

@@ -1,7 +1,7 @@
 # OWL Profile Validation Report
 
 **Ontology**: ontology/src/rope.ttl
-**Date**: 2026-06-30 14:54:56 UTC
+**Date**: 2026-06-30 15:03:12 UTC
 
 ---
 

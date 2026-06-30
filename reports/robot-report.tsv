@@ -39,6 +39,7 @@ WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#LoadRole	IAO:00
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#LoadState	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#LocomotiveRole	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#Message	IAO:0000115	
+WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#OTN	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#OperationalArtifact	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#OperationalInstant	IAO:0000115	
@@ -162,17 +163,15 @@ WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#stopsAtDestinat
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#trainDepartureDate	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#trainLeadRU	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/operations/rope/rope#uicWagonNumber	IAO:0000115	
-WARN	missing_definition	https://cdm.ovh/taf/tafp5#OTN	IAO:0000115	
-WARN	missing_definition	https://cdm.ovh/taf/tafp5#hasParticipant	IAO:0000115	
 INFO	missing_superclass	http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role	rdfs:subClassOf	
 INFO	missing_superclass	http://www.w3.org/2006/time#Instant	rdfs:subClassOf	
 INFO	missing_superclass	http://www.w3.org/2006/time#Interval	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#ContentLocation	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#CustomsStatus	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#Journey	rdfs:subClassOf	
+INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#OTN	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#OperationalEntity	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#ReferenceOTN	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#ServiceType	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#TemporalRole	rdfs:subClassOf	
 INFO	missing_superclass	https://cdm.ovh/rsm/operations/rope/rope#TrainServicingResult	rdfs:subClassOf	
-INFO	missing_superclass	https://cdm.ovh/taf/tafp5#OTN	rdfs:subClassOf	
