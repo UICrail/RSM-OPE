@@ -3,8 +3,16 @@
 name: Ontology verification
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
+    inputs:
+      main_ontology:
+        description: "Optional override for ontology entrypoint (else uses ontology/src/config.md)"
+        required: false
+        type: string
+      reasoner:
+        description: "Optional override for reasoner (else uses ontology/src/config.md)"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -13,10 +21,12 @@ jobs:
   qa:
     uses: Airy59/OntoQA/.github/workflows/ci.yml@main    # shared GitHub pipeline. @main tells to use latest commit.
     with:
-      main_ontology: ontology/src/core.ttl  # several file can be provided, but there must be a root ontology file (core.ttl) importing the others.
+      # If empty, OntoQA workflow falls back to ontology/src/config.md
+      main_ontology: ${{ inputs.main_ontology }}
+      reasoner: ${{ inputs.reasoner }}
       shapes_glob:   ontology/shapes/**/*.ttl
       data_glob:     ontology/data/**/*.ttl
-      reasoner:      hermit  # hermit | elk | pellet | jfact | structural.
+      # main_ontology + reasoner can also be resolved from ontology/src/config.md (YAML front matter)
 
       # Note: workflow tags can also refer to a specific version (@v1 ...) or commit
       # Note: we recommend using HermiT (strict DL reasoner, default in Protégé) or Pellet (DL reasoner, more relaxed on e.g. datatypes)
