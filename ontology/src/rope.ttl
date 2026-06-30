@@ -1471,7 +1471,11 @@ It is a process and may have parts that are sub-processes."""@en ;
 
 ###  https://cdm.ovh/taf/tafp5#TrainState
 <https://cdm.ovh/taf/tafp5#TrainState> rdf:type owl:Class ;
-                                       rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalState> ;
+                                       rdfs:subClassOf <https://cdm.ovh/taf/tafp5#OperationalState> ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty dul:hasParticipant ;
+                                                         owl:someValuesFrom <https://cdm.ovh/taf/tafp5#Train>
+                                                       ] ;
                                        rdfs:comment """Characterizes the state of the Train (as a physical asset), e.g. speed, mass, GPS coordinates of some particular point of the train, etc.
 Since the subclasses are not disjoint, the ontology user is free to use a single individual to combine information. Ultimately, most useful combinations should give rise to dedicated subclasses, in the interest of efficient data serialization and transformation to/from document formats such as JSON or XML."""@en ;
                                        rdfs:label "Train state"@en .
@@ -1695,13 +1699,6 @@ Since the subclasses are not disjoint, the ontology user is free to use a single
 #    General axioms
 #################################################################
 
-[ rdf:type owl:Restriction ;
-  owl:onProperty dul:hasParticipant ;
-  owl:someValuesFrom <https://cdm.ovh/taf/tafp5#Train> ;
-  rdfs:subClassOf <https://cdm.ovh/taf/tafp5#TrainState>
-] .
-
-
 [ rdf:type owl:Restriction ;
   owl:onProperty dul:hasParticipant ;
   owl:someValuesFrom <https://cdm.ovh/taf/tafp5#TrainRun> ;

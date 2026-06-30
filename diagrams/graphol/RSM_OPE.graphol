@@ -8419,8 +8419,8 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <label y="10" x="460" width="85" customSize="0" size="12" height="23"/>
         </node>
         <node type="domain-restriction" id="n28" color="#fcfcfc">
-          <geometry y="120" x="340" width="20" height="20"/>
-          <label y="98" x="340" width="39" customSize="0" size="12" height="23">exists</label>
+          <geometry y="120" x="350" width="20" height="20"/>
+          <label y="98" x="350" width="39" customSize="0" size="12" height="23">exists</label>
         </node>
         <node type="concept" id="n29" color="#fcfcfc">
           <geometry y="120" x="460" width="110" height="50"/>
@@ -8629,17 +8629,13 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
           <point y="250" x="560"/>
           <point y="250" x="650"/>
         </edge>
-        <edge target="n0" type="inclusion" id="e25" source="n28">
-          <point y="120" x="340"/>
-          <point y="120" x="210"/>
-        </edge>
         <edge target="n28" type="input" id="e26" source="n27">
           <point y="40" x="460"/>
-          <point y="120" x="340"/>
+          <point y="120" x="350"/>
         </edge>
         <edge target="n28" type="input" id="e27" source="n29">
           <point y="120" x="460"/>
-          <point y="120" x="340"/>
+          <point y="120" x="350"/>
         </edge>
         <edge target="n30" type="input" id="e28" source="n33">
           <point y="650" x="560"/>
@@ -8777,6 +8773,10 @@ The Lead RU (responsible for the train run also for the commercial aspects) is d
         <edge target="n0" type="inclusion" id="e67" source="n44">
           <point y="780" x="347"/>
           <point y="120" x="210"/>
+        </edge>
+        <edge target="n28" type="inclusion" id="e68" source="n0">
+          <point y="120" x="210"/>
+          <point y="120" x="350"/>
         </edge>
         <edge target="n8" type="inclusion" id="e7" source="n4">
           <point y="390" x="650"/>
